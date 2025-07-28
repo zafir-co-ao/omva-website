@@ -1,0 +1,15 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Roboto', serif;
+  src: url('/fonts/Roboto-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Benton Sans';
+  src: url('/fonts/BentonSans-Regular.woff2') format('woff2');
+}

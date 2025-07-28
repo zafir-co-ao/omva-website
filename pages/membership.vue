@@ -1,0 +1,63 @@
+<template>
+  <div class="bg-white">
+    <!-- Cabeçalho -->
+    <div class="bg-secondary">
+      <div class="max-w-8xl w-full p-4 lg:p-[20px] m-auto">
+        <h2
+          class="text-white font-bold font-roboto text-[28px] lg:text-[34px] text-left lg:mt-6"
+        >
+          Aderir a OMVA
+        </h2>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <img
+      src="/images/membership-hero.jpg"
+      class="w-full h-auto max-h-[400px] object-cover"
+      alt="Capa de adesão"
+    />
+
+    <!-- Botões de Adesão e Renovação de Adesão -->
+    <div class="mt-6 flex gap-4 items-center justify-center">
+      <AppButton>Aderir a OMVA</AppButton>
+      <AppButton>Renovar a sua Adesão</AppButton>
+    </div>
+
+    <!-- Grid Principal -->
+    <div
+      class="max-w-8xl w-full m-auto grid grid-cols-1 gap-10 lg:grid-cols-3 mt-10 mb-10 px-4 lg:px-[20px]"
+    >
+      <!-- Info de Contacto (fica embaixo no mobile) -->
+      <div
+        class="bg-secondary p-6 md:p-8 h-48 flex justify-start items-center order-last lg:order-none"
+      >
+        <div>
+          <h3 class="font-semibold text-white mb-1 text-base lg:text-lg"></h3>
+          <p class="text-white leading-6 text-sm lg:text-base font-benton">
+            <strong>Questões sobre a Adesão</strong><br />
+            Telefone: +244 983 345 897 <br />
+            Segunda - Sexta | 8h:30min - 16h:30min <br />
+            Email: <span class="text-[#1b94bf]">geral@omvangola.co.ao</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Texto + Tabela -->
+      <div class="col-span-1 lg:col-span-2">
+        <ContentRenderer class="grid gap-10" v-if="data" :value="data" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+const { data } = await useAsyncData('membership', () =>
+  queryCollection('content').path('/membership-content').first()
+);
+
+useSeoMeta({
+  title: data.value?.title,
+  description: data.value?.description,
+});
+</script>

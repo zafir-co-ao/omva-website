@@ -1,0 +1,52 @@
+---
+title: 'Nós somos a OMVA'
+description: 'A Ordem dos Médicos Veterinários de Angola (OMVA) é a instituição pública que representa e regula a profissão veterinária em Angola. Criada ao abrigo do Decreto n.º 95/03, de 21 de outubro de 2003, é constituída como pessoa coletiva de direito público, plenamente independente dos órgãos do Estado, com autonomia administrativa, financeira e patrimonial. A sua missão primordial é defender o exercício ético da medicina veterinária, promover o progresso técnico e científico, salvaguardar os interesses profissionais dos seus membros e contribuir ativamente para a saúde pública, a sanidade animal e a higiene alimentar sustentável.'
+roles:
+  title: 'As principais atribuições e competências da OMVA incluem:'
+  items:
+    - 'Regulação e Fiscalização: É a entidade responsável por regular e fiscalizar o exercício da medicina veterinária em Angola, garantindo que os profissionais estejam devidamente habilitados e licenciados.'
+    - 'Emissão da Cédula Profissional: A Ordem tem a competência exclusiva de emitir a cédula profissional, documento indispensável para o exercício legal da profissão no país.'
+    - 'Defesa da Ética e Deontologia: Zela pela função social, dignidade e prestígio da profissão, assegurando que todos os médicos veterinários inscritos respeitem o código deontológico. Exerce poder disciplinar sobre os seus membros em caso de infração.'
+    - 'Promoção da Saúde Pública e Animal: Contribui ativamente para a defesa da saúde pública, a proteção da sanidade animal e a segurança alimentar, áreas cruciais para o desenvolvimento sustentável do país.'
+    - 'Representação da Classe: Atua como a voz dos médicos veterinários, representando-os perante quaisquer entidades públicas ou privadas, nacionais ou internacionais.'
+    - 'Desenvolvimento Profissional: Promove a valorização e a formação contínua dos seus membros, incentivando o desenvolvimento científico e técnico da medicina veterinária em Angola.'
+coreValues:
+  title: 'Nossos valores fundamentais'
+  description: 'A OMVA é:'
+  values:
+    - 'Ética Profissional'
+    - 'Excelência'
+    - 'Responsabilidade Social'
+    - 'Transparência'
+    - 'Compromisso com a Classe'
+    - 'Parceria Institucional'
+---
+
+# ORDEM DOS MÉDICOS VETERINÁRIOS DE ANGOLA (OMVA)
+
+## O que é a OMVA
+
+A Ordem dos Médicos Veterinários de Angola, abreviadamente designada OMVA, é
+a instituição representativa dos Médicos Veterinários que, em conformidade com os
+preceitos do Estatuto e demais disposições legais aplicáveis, exercem actividades
+veterinárias.
+
+2- A Ordem é uma associação pública independente dos órgãos do Estado, sendo livre e
+autónoma no âmbito das suas atribuições.
+
+## Representação da Ordem
+
+1- A Ordem é representada em juízo e fora dele pelo Bastonário/a ou pelos presidentes dos
+Conselhos Regionais, quando se trate de actos da responsabilidade das respectivas
+delegações.
+
+## ARTIGO 60.º DO ESTATUTO DA ORDEM
+
+Exercício profissional da medicina veterinária
+
+1- Só os médicos veterinários com inscrição em vigor na Ordem podem exercer, no
+território nacional, a título profissional, a actividade médica veterinária.
+
+2- O exercício da profissão veterinária em infracção ao disposto no número anterior
+constitui crime de usurpação de funções punível nos termos das disposições do Código
+Penal.

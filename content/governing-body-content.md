@@ -1,0 +1,45 @@
+---
+title: 'Corpo Directivo'
+description: 'Conheça os membros do Conselho Directivo da OMVA'
+members:
+  - id: 'carla-suzana-correia-fernandes'
+    name: 'Carla Suzana Correia Fernandes'
+    role: 'Médica Veterinária | Bastonária da OMVA'
+    imageUrl: '/images/carlafernandes.jpeg'
+    description: 'Com uma sólida formação académica, que inclui uma Licenciatura em Medicina Veterinária pela Universidade de Lisboa concluída em 2002 e um Mestrado em Segurança Alimentar, Carla Suzana Correia Fernandes é uma figura de referência na saúde animal em Angola. A sua carreira multifacetada, iniciada em 2004, demonstra uma profunda experiência em múltiplas vertentes do setor:'
+    list:
+      - 'Investigação Científica: Funcionária do Instituto de Investigação Veterinária desde 2004, onde se dedica à investigação e desenvolvimento em saúde animal.'
+      - 'Prática Clínica: Atuou como Médica Veterinária em clínica de pequenos animais entre 2004 e 2024, com foco em atendimento clínico, cirúrgico, diagnóstico e tratamento de doenças.'
+      - 'Funcionária do Instituto de Investigação Veterinária desde 2004'
+      - 'Docência Universitária: É docente na Universidade Privada de Angola e na Universidade de Belas desde 2020, lecionando disciplinas como Microbiologia e Imunologia Geral.'
+    subDescription: 'A sua liderança na OMVA foi consolidada após um percurso como Presidente do Conselho Regional Norte e membro do Conselho Diretivo nacional (mandato 2022–2024). Em dezembro de 2023, foi eleita Bastonária para o triénio 2024–2026, com a missão de fortalecer e modernizar a profissão.'
+
+  - id: 'jose-paulino-wanga-sachilepa'
+    name: 'José Paulino Wanga Sachilepa'
+    role: 'Médico Veterinário | Vice-Presidente da OMVA'
+    imageUrl: '/images/josesachilepa.jpeg'
+    description: 'Licenciado pela Universidade José Eduardo dos Santos (2017), onde exerceu o cargo de Vice-Presidente da Associação dos Estudantes da Faculdade de Medicina Veterinária. É actualmente membro do Conselho Directivo da OMVA e da ASAVA. Desde 2017, dedica-se exclusivamente à clínica de animais de companhia, com formação contínua nas seguintes áreas:'
+    list:
+      - 'Cuidados intensivos em pequenos animais – Grupo INN (Argentina)'
+      - 'Medicina interna'
+      - 'Diagnóstico por imagem (nível básico)'
+      - 'Anestesia e laboratório clínico'
+      - 'Oftalmologia veterinária'
+      - 'Cirurgias de tecidos moles – VetEduka'
+      - 'Produção de suínos em sistema semi-industrial – Senar (Brasil)'
+    subDescription: 'Participa regularmente em congressos, acções formativas e jornadas científicas com foco na medicina de animais de companhia.'
+
+  - id: 'ione-daniela-bernardo-bettencurt'
+    name: 'Ione Daniela Bernardo Bettencurt'
+    role: 'Médica Veterinária | Secretária da OMVA'
+    imageUrl: '/images/ionebettencurt.jpeg'
+    description: 'Formada em 2012 pela Faculdade de Medicina Veterinária da Universidade Lusófona de Humanidades e Tecnologias (FMV-ULHT) em Lisboa. Fundadora e proprietária do Centro Veterinário de Luanda (CVL), inaugurado em 2014. A CVL tornou-se o primeiro Hospital Veterinário 24 horas de Angola.'
+    subDescription: 'Ao longo da sua carreira, aprimorou as suas competências através de diversas formações especializadas, incluindo Anestesia e Cuidados Intensivos, Ecografia Abdominal e Reprodução de Pequenos Animais. É também certificada em Cirurgia de Tecidos Moles pela ESAVS (Universidade do Luxemburgo) e em Traumatologia/Ortopedia de Pequenos Animais pela FMV-UCM (Universidade Complutense de Madrid). Desde o início da sua vida profissional, tem demonstrado um forte compromisso com a aprendizagem contínua, participando ativamente em congressos e cursos intensivos nas suas principais áreas de interesse.'
+
+  - id: 'francisco-fonseca-frederico'
+    name: 'Francisco Fonseca Frederico'
+    role: 'Médico Veterinário | Comunicação Institucional e Imprensa da OMVA'
+    imageUrl: '/images/franciscofrederico.jpeg'
+    description: 'Possui uma trajetória profissional notável e focada em grandes projetos agropecuários em Angola. A formação acadêmica inclui Técnico Médio de Produção Animal pelo Instituto Médio Agrário (2013), Licenciatura em Medicina Veterinária pela Universidade José Eduardo dos Santos (2022) e Pós-Graduação em Produção e Nutrição de Pequenos Ruminantes pelo programa UNI-AO.'
+    subDescription: 'Com a carteira profissional n.º 453 da Ordem dos Médicos Veterinários de Angola (OMVA), integra o Conselho Diretivo desde 2023 como Diretor para Comunicação Institucional e Imprensa. A vasta experiência profissional abrange posições chave como Médico Veterinário no Departamento de Produção e Sanidade Animal na Fazenda Novagrolider (2020-2024) e, mais recentemente, como Médico Veterinário e Diretor Clínico na Fazenda Pamado (2024-2025), onde foi responsável pela área de Sanidade Animal. Possui profundo conhecimento em nutrição, produção e reprodução animal, incluindo técnicas avançadas como inseminação artificial e diagnóstico de gestação em animais de produção.'
+---
