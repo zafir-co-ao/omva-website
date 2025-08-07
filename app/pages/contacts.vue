@@ -44,15 +44,18 @@
         <AppButton>Submeter</AppButton>
       </form>
       <div class="md:col-span-1">
-        <div class="bg-[#f7f8f8] h-60 px-5 py-6 pt-16">
+        <div class="bg-[#f7f8f8] px-6 py-8 pt-16">
           <h2
             class="font-medium font-roboto mb-2 leading-3 text-brown text-xl lg:text-2xl"
           >
             Sede
           </h2>
-          <div class="space-y-1 text-sm lg:text-base text-brown">
-            <p>Angola, Luanda, Ingombota</p>
-            <p><span class="font-medium">Telefone:</span> +244 945 674 456</p>
+          <div class="space-y-2 text-sm lg:text-base text-brown">
+            <p>
+              Condomínio Villa de Luanda, Edifício Mavinga, 4.º andar, Ala
+              Direita, Apartamento 406, Rua da antiga FILDA, Luanda, Angola
+            </p>
+            <p><span class="font-medium">Telefone:</span> +244 932 131 935</p>
             <p><span class="font-medium">Email:</span> geral@omvangola.co.ao</p>
           </div>
         </div>
@@ -63,7 +66,7 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Contacte-nos',
+  title: 'Contacte-nos | Ordem dos Médicos Veterinários de Angola',
   description: 'Entre em contacto connosco para mais informações ou questões.',
 });
 </script>
