@@ -26,6 +26,9 @@ export default {
       padding: {
         '1/2': '3px',
       },
+      backgroundImage: {
+        'hero-pattern': "url('/images/hero-teste.jpg')",
+      },
     },
   },
   plugins: [],

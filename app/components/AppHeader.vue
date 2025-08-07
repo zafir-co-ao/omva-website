@@ -2,9 +2,7 @@
   <header>
     <!-- Barra superior -->
     <div class="bg-white">
-      <div
-        class="max-w-8xl lg:mx-auto lg:px-6 lg:py-3 flex items-center justify-between"
-      >
+      <div class="max-w-8xl lg:mx-auto lg:px-4 lg:py-3 flex justify-between">
         <div class="lg:hidden">
           <button
             @click="toggleMobileMenu()"
@@ -48,14 +46,14 @@
             </i>
           </button>
         </div>
-        <NuxtLink
-          to="/"
-          class="flex items-center gap-3 border-x-2 lg:border-none w-full lg:w-auto"
-        >
-          <img src="/logo.svg" alt="OMVA" class="w-full h-14 lg:h-20" />
-        </NuxtLink>
+        <a href="/" class="border-x-2 lg:border-none w-full lg:w-auto">
+          <img src="/logo2.svg" alt="logo OMVA" class="w-full h-14 lg:h-20" />
+        </a>
         <div class="lg:flex items-center gap-6 hidden">
-          <NuxtLink to="/membership" class="text-brown text-sm font-benton">
+          <NuxtLink
+            to="/membership"
+            class="text-brown hover:underline text-sm font-benton"
+          >
             Adesão/Renovação
           </NuxtLink>
           <AppButton class="ml-8">Entrar</AppButton>
@@ -101,12 +99,7 @@
               @click="toggleDropdownMenu(item.label)"
             >
               <span>{{ item.label }}</span>
-              <i
-                :class="[
-                  item.subItems && openDropdownLabel === item.label
-                    ? 'rotate-180'
-                    : '',
-                ]"
+              <i :class="[isDropdownOpen(item) ? 'rotate-180' : '']"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -123,7 +116,7 @@
                 </svg>
               </i>
             </div>
-            <ul v-if="item.subItems && openDropdownLabel === item.label">
+            <ul v-if="isDropdownOpen(item)">
               <li v-for="sub in item.subItems" :key="sub.to">
                 <NuxtLink
                   :to="sub.to"
@@ -149,44 +142,45 @@
           <li
             v-for="item in navItems"
             :key="item.to"
-            class="relative p-5"
-            :class="[
-              item.subItems && openDropdownLabel === item.label
-                ? 'bg-secondary'
-                : '',
-              ,
-            ]"
+            class="relative px-5 py-6"
+            :class="[isDropdownOpen(item) ? 'bg-secondary' : '', ,]"
           >
             <!-- Link -->
-            <NuxtLink
-              v-if="!item.subItems"
-              :to="item.to"
-              @click="toggleDropdownMenu(item.label)"
-              class="pb-2 border-b-2 hover:border-primary"
-              :class="[
-                isActive(item.to!) ? 'border-primary' : 'border-transparent',
-              ]"
-            >
-              {{ item.label }}
-            </NuxtLink>
+            <div v-if="!item.subItems" class="relative">
+              <NuxtLink :to="item.to" @click="toggleDropdownMenu(item.label)">
+                {{ item.label }}
+                <span
+                  :class="[isActive(item.to!) ? 'opacity-100' : 'opacity-0']"
+                  class="absolute left-0 top-[2px] w-full border-b-2 border-primary p-3 hover:opacity-100"
+                ></span>
+              </NuxtLink>
+            </div>
 
             <!-- Botão de dropdown -->
-            <button
-              v-else
-              @click="toggleDropdownMenu(item.label)"
-              class="pb-2 border-b-2 border-transparent hover:border-primary"
-              :class="[
-                openDropdownLabel === item.label
-                  ? 'text-white hover:border-transparent'
-                  : '',
-              ]"
-            >
-              {{ item.label }}
-            </button>
+            <div v-else class="relative">
+              <button
+                @click="toggleDropdownMenu(item.label)"
+                :class="[isDropdownOpen(item) ? 'text-white' : '']"
+              >
+                {{ item.label }}
+                <span
+                  v-for="sub in item.subItems"
+                  :key="sub.to"
+                  :class="[
+                    isDropdownOpen(item)
+                      ? 'opacity-0'
+                      : isActive(sub.to)
+                        ? 'opacity-100'
+                        : 'opacity-0 hover:opacity-100',
+                  ]"
+                  class="absolute left-0 top-[1px] w-full border-b-2 border-primary p-3"
+                ></span>
+              </button>
+            </div>
 
             <!-- Menu Dropdown -->
             <ul
-              v-if="item.subItems && openDropdownLabel === item.label"
+              v-if="isDropdownOpen(item)"
               class="absolute z-50 left-0 mt-5 bg-secondary w-56 px-2 py-4 space-y-1"
             >
               <li v-for="sub in item.subItems" :key="sub.to">
@@ -207,7 +201,7 @@
 
     <!-- Breadcrumb -->
     <nav
-      class="max-w-8xl mx-auto px-4 py-4 text-[12px] font-benton"
+      class="max-w-8xl mx-auto p-4 text-[12px] font-benton"
       v-if="route.path !== '/'"
     >
       <ul class="flex space-x-2">
@@ -237,14 +231,19 @@ const isActive = (path: string) => {
   return route.path === path || route.path.startsWith(path + '/');
 };
 
+const isDropdownOpen = (item: NavItem) => {
+  return item.subItems && openDropdownLabel.value === item.label;
+};
+
 const openDropdownLabel = ref<string | null>(null);
 const toggleDropdownMenu = (label: string) => {
-  openDropdownLabel.value = openDropdownLabel.value === label ? null : label;
+  return (openDropdownLabel.value =
+    openDropdownLabel.value === label ? null : label);
 };
 
 const isMobileMenuOpen = ref(false);
 const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value;
+  return (isMobileMenuOpen.value = !isMobileMenuOpen.value);
 };
 
 interface NavItem {
@@ -259,6 +258,13 @@ interface NavItem {
 const navItems: NavItem[] = [
   { to: '/membership', label: 'ADESÃO' },
   {
+    label: 'ÓRGÃOS DA ORDEM',
+    subItems: [
+      { to: '/congress', label: 'Congresso' },
+      { to: '/general-assembly', label: 'Assembleia Geral' },
+    ],
+  },
+  {
     label: 'SOBRE',
     subItems: [
       { to: '/about', label: 'OMVA' },
@@ -267,13 +273,11 @@ const navItems: NavItem[] = [
       { to: '/about/governing-body', label: 'Corpo Directivo' },
     ],
   },
-  { to: '/contact', label: 'CONTACTO' },
+  { to: '/contacts', label: 'CONTACTOS' },
 ];
 
 const normalizeLabel = (segment: string) => {
-  return segment
-    .replace(/-/g, ' ')                
-    .replace(/\b\w/g, (c) => c); 
+  return segment.replace(/-/g, ' ').replace(/\b\w/g, (c) => c);
 };
 
 const findLabel = (items: NavItem[], path: string): string => {
@@ -294,7 +298,9 @@ const breadcrumb = computed(() => {
 
   for (let i = 0; i < segments.length; i++) {
     currentPath += '/' + segments[i];
-    const label = findLabel(navItems, currentPath) || normalizeLabel(segments[i]!).toUpperCase();
+    const label =
+      findLabel(navItems, currentPath) ||
+      normalizeLabel(segments[i]!).toUpperCase();
     breadcrumbs.push({ to: currentPath, label });
   }
 

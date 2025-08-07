@@ -2,7 +2,13 @@
   <div>
     <!-- Hero Area -->
     <div class="relative">
-      <img src="/images/hero-main.webp" alt="Hero OMVA" />
+      <div class="bg-hero-pattern bg-center bg-cover bg-no-repeat h-[70vh]">
+        <!-- <NuxtImg
+          src="/images/hero-teste.jpg"
+          alt="Hero OMVA"
+          class="h-full w-full object-cover"
+        /> -->
+      </div>
       <div
         class="lg:absolute lg:left-20 lg:bottom-[-2rem] bg-secondary/95 p-12 lg:w-[480px] lg:h-64"
       >
@@ -30,24 +36,24 @@
             <h3 class="font-benton text-xl text-brown mb-1 font-semibold">
               The Deep Drive in wolrd of veterinary medicine
             </h3>
-            <MyParagraph>
+            <AppParagraph>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Molestiae consectetur laborum eius, eveniet doloribus odio
               mollitia ex illum? Ipsa aliquam nobis doloremque aspernatur
               praesentium voluptatem? A eius repellat consectetur quis?
-            </MyParagraph>
+            </AppParagraph>
           </div>
           <div>
             <h3 class="font-benton text-xl text-brown mb-1 font-semibold">
               How Develop the veterinary profession
             </h3>
-            <MyParagraph>
+            <AppParagraph>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
               quia similique repellendus nam perspiciatis non, cupiditate
               deleniti doloribus, voluptatibus alias omnis. Officia pariatur
               aliquid. cupiditate deleniti doloribus, voluptatibus alias omnis.
               Officia pariatur aliquid.
-            </MyParagraph>
+            </AppParagraph>
           </div>
         </div>
       </div>
@@ -57,6 +63,6 @@
 
 <script setup>
 useSeoMeta({
-  title: 'OMVA - Ordem dos Médicos Veterinários de Angola',
+  title: 'Home | Ordem dos Médicos Veterinários de Angola',
 });
 </script>

@@ -20,15 +20,19 @@
         <div class="sm:col-span-2">
           <AppH2>{{ member.role }}</AppH2>
           <div class="mt-6 space-y-6">
-            <MyParagraph>
+            <AppParagraph>
               {{ member.description }}
-            </MyParagraph>
+            </AppParagraph>
 
-            <AppList v-if="member.list" :items="member.list"></AppList>
+            <AppList
+              v-if="member.list"
+              :items="member.list"
+              :isStyled="true"
+            ></AppList>
 
-            <MyParagraph v-if="member.subDescription">
+            <AppParagraph v-if="member.subDescription">
               {{ member.subDescription }}
-            </MyParagraph>
+            </AppParagraph>
           </div>
         </div>
       </div>

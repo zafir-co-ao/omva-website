@@ -2,7 +2,7 @@
   <div class="bg-white">
     <!-- Cabeçalho -->
     <div class="bg-secondary">
-      <div class="max-w-8xl p-4 lg:p-[20px] m-auto">
+      <div class="max-w-8xl p-4 lg:py-6 m-auto">
         <h2
           class="text-white font-bold font-roboto text-[28px] lg:text-[34px] text-left lg:mt-6"
         >
@@ -36,7 +36,7 @@
           <h3 class="font-semibold text-white mb-1 text-base lg:text-lg"></h3>
           <p class="text-white leading-6 text-sm lg:text-base font-benton">
             <strong>Questões sobre a Adesão</strong><br />
-            Telefone: +244 983 345 897 <br />
+            Telefone: +244 932 131 935 <br />
             Segunda - Sexta | 8h:30min - 16h:30min <br />
             Email: <span class="text-[#1b94bf]">geral@omvangola.co.ao</span>
           </p>

@@ -5,10 +5,14 @@
     <!-- História -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mx-auto">
       <div class="col-span-1 lg:h-64">
-        <img src="/images/history.jpg" class="w-full h-auto shadow-md" alt="" />
+        <img
+          src="/images/history.jpg"
+          class="w-full h-auto"
+          alt="{{ data.title }}"
+        />
       </div>
       <div class="col-span-2">
-        <ContentRenderer class="grid gap-8" v-if="data" :value="data" />
+        <ContentRenderer class="grid gap-10" v-if="data" :value="data" />
       </div>
     </div>
   </div>

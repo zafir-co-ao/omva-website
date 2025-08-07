@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-footColor text-white px-4 md:px-6">
+  <footer class="bg-footColor text-white px-4">
     <div
       class="max-w-8xl mx-auto py-14 lg:py-16 grid grid-cols-1 md:grid-cols-3 gap-8"
     >
@@ -7,16 +7,20 @@
       <div
         class="mb-2 flex items-center justify-center lg:justify-start lg:items-start"
       >
-        <img src="/logo.svg" alt="OMVA" class="h-16 lg:h-20" />
+        <NuxtLink to="/"
+          ><img src="/logo.svg" alt="logo OMVA" class="h-16 lg:h-20"
+        /></NuxtLink>
       </div>
 
       <!-- Coluna 2: Links institucionais -->
       <div
         class="flex flex-col gap-2 text-sm font-benton items-center lg:items-start"
       >
-        <a href="#">Contacte-nos</a>
-        <a href="#">Política de Privacidade</a>
-        <a href="#">Termos de Uso</a>
+        <NuxtLink to="/contacts" class="hover:underline">Contacte-nos</NuxtLink>
+        <NuxtLink to="#" class="hover:underline"
+          >Política de Privacidade</NuxtLink
+        >
+        <NuxtLink to="#" class="hover:underline">Termos de Uso</NuxtLink>
       </div>
 
       <!-- Coluna 3: Redes sociais -->
@@ -25,6 +29,7 @@
           <!-- Facebook -->
           <a
             href="https://www.facebook.com/omvangola.co.ao"
+            target="_blank"
             aria-label="Facebook"
             class="text-white hover:text-primary"
           >
@@ -42,6 +47,7 @@
           <!-- Instagram -->
           <a
             href="https://www.instagram.com/omvangola/"
+            target="_blank"
             aria-label="Instagram"
             class="text-white hover:text-primary"
           >
@@ -60,6 +66,7 @@
           <a
             href="mailto:geral@omvangola.co.ao"
             aria-label="Email"
+            target="_blank"
             class="text-white hover:text-primary"
           >
             <svg
@@ -87,5 +94,7 @@
 </template>
 
 <script setup lang="ts">
+import { NuxtLink } from '#components';
+
 const fullYear = new Date().getFullYear();
 </script>

@@ -9,9 +9,9 @@
       <!-- Coluna Esquerda: Conteúdo Principal -->
       <div class="lg:col-span-2">
         <div class="max-w-none">
-          <MyParagraph v-if="data?.description">{{
+          <AppParagraph v-if="data?.description">{{
             data.description
-          }}</MyParagraph>
+          }}</AppParagraph>
 
           <div v-if="data?.roles" class="mt-8">
             <p class="mb-4 font-roboto text-sm lg:text-base text-brown">

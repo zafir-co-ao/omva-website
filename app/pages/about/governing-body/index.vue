@@ -17,17 +17,17 @@
             member.name
           }}</NuxtLink>
         </h2>
-        <MyParagraph class="lg:text-sm">{{
+        <AppParagraph class="lg:text-sm">{{
           member.role.toUpperCase()
-        }}</MyParagraph>
-        <MyParagraph>
+        }}</AppParagraph>
+        <AppParagraph>
           {{ member.description.slice(0, 300).toString() }}...
           <NuxtLink :to="`/about/governing-body/${member.id}`"
             ><span class="text-primary hover:underline"
               >Saber Mais</span
             ></NuxtLink
           >
-        </MyParagraph>
+        </AppParagraph>
       </div>
     </div>
   </div>

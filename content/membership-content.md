@@ -1,9 +1,9 @@
 ---
-title: 'Adesão à OMVA'
+title: 'Adesão à OMVA | Ordem dos Médicos Veterinários de Angola'
 description: 'A adesão à Ordem dos Médicos Veterinários de Angola (OMVA) é essencial para o exercício legal da profissão, oferecendo benefícios como a emissão de cédula profissional, registo obrigatório e acesso a formações.'
 ---
 
-::MyParagraph
+::AppParagraph
 A filiação à Ordem dos Médicos Veterinários de Angola (OMVA) garante aos profissionais do
 setor o acesso a ferramentas fundamentais como a emissão da cédula profissional e o
 registo obrigatório, essenciais para o exercício legal da medicina veterinária no país. A
@@ -13,7 +13,7 @@ passou a ser obrigatório o registo de clínicas veterinárias, uma medida que v
 a qualidade dos serviços e reforçar a segurança sanitária nacional.
 ::
 
-::MyParagraph
+::AppParagraph
 Ao tornar-se membro, o médico veterinário beneficia ainda de apoio institucional e técnico
 para abertura e legalização de clínicas, bem como de descontos e ferramentas exclusivas. A
 OMVA defende ativamente a municipalização da profissão, com o objetivo de garantir pelo
