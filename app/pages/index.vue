@@ -2,23 +2,21 @@
   <div>
     <!-- Hero Area -->
     <div class="relative">
-      <div class="bg-hero-pattern bg-center bg-cover bg-no-repeat h-[70vh]">
-        <!-- <NuxtImg
-          src="/images/hero-teste.jpg"
-          alt="Hero OMVA"
-          class="h-full w-full object-cover"
-        /> -->
-      </div>
+      <div
+        class="bg-hero-pattern bg-center bg-cover bg-no-repeat h-[70vh]"
+      ></div>
+
+      <!-- Hero Overlay -->
       <div
         class="lg:absolute lg:left-20 lg:bottom-[-2rem] bg-secondary/95 p-12 lg:w-[480px] lg:h-64"
       >
-        <div class="text-white text-center lg:text-left mt-4">
+        <div class="text-white text-center lg:text-left mt-6">
           <h1 class="text-2xl md:text-3xl font-semibold font-benton">
-            Nossa Paixão. Nossa profissão.
+            A profissão é o nosso legado.
           </h1>
-          <p class="text-sm md:text-base mt-2 font-roboto">
-            Capacitar os veterinários para prosperarem na profissão que todos
-            nós adoramos.
+          <p class="text-sm md:text-base mt-4 font-roboto">
+            Defende os teus direitos com responsabilidade e honra os teus
+            deveres.
             <NuxtLink to="/membership" class="text-[#16c1d8] hover:underline"
               >Adesão/Renovação</NuxtLink
             >

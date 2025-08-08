@@ -1,3 +1,94 @@
+<script setup lang="ts">
+import { NuxtLink } from '#components';
+import { type NavItem } from '../types/navItem';
+
+const route = useRoute();
+const isActive = (path: string) => {
+  return route.path === path || route.path.startsWith(path + '/');
+};
+
+const isDropdownOpen = (item: NavItem) => {
+  return item.subItems && openDropdownLabel.value === item.label;
+};
+
+const openDropdownLabel = ref<string | null>(null);
+const toggleDropdownMenu = (label: string) => {
+  return (openDropdownLabel.value =
+    openDropdownLabel.value === label ? null : label);
+};
+
+const isMobileMenuOpen = ref(false);
+const toggleMobileMenu = () => {
+  return (isMobileMenuOpen.value = !isMobileMenuOpen.value);
+};
+
+const navItems: NavItem[] = [
+  { to: '/membership', label: 'ADESÃO' },
+  {
+    label: 'ÓRGÃOS DA ORDEM',
+    subItems: [
+      { to: '/congress', label: 'Congresso' },
+      { to: '/general-assembly', label: 'Assembleia Geral' },
+    ],
+  },
+  {
+    label: 'SOBRE',
+    subItems: [
+      { to: '/about', label: 'OMVA' },
+      { to: '/about/history', label: 'História' },
+      { to: '/docs/estatutos-omva-2003.pdf', label: 'Estatutos' },
+      { to: '/about/governing-body', label: 'Corpo Directivo' },
+    ],
+  },
+  { to: '/contacts', label: 'CONTACTOS' },
+];
+
+const otherItems = [
+  {
+    to: '/about/mission-vision-and-values',
+    label: 'MISSÃO VISÃO E VALORES',
+  },
+];
+
+const normalizeLabel = (segment: string) => {
+  return segment.replace(/-/g, ' ').replace(/\b\w/g, (c) => c);
+};
+
+const findLabel = (items: NavItem[], path: string): string => {
+  for (const item of items) {
+    if (item.to === path) return item.label;
+
+    for (const other of otherItems) {
+      if (other.to === path) return other.label;
+    }
+
+    if (item.subItems) {
+      const found = findLabel(item.subItems, path);
+      if (found) return found.toUpperCase();
+    }
+  }
+  return '';
+};
+
+const breadcrumb = computed(() => {
+  const segments = route.path.split('/').filter(Boolean);
+  const breadcrumbs = [{ to: '/', label: 'HOME' }];
+  let currentPath = '';
+
+  for (let i = 0; i < segments.length; i++) {
+    currentPath += '/' + segments[i];
+
+    const label =
+      findLabel(navItems, currentPath) ||
+      normalizeLabel(segments[i]!).toUpperCase();
+
+    breadcrumbs.push({ to: currentPath, label });
+  }
+
+  return breadcrumbs;
+});
+</script>
+
 <template>
   <header>
     <!-- Barra superior -->
@@ -9,7 +100,7 @@
             class="p-4"
             :class="[!isMobileMenuOpen ? '' : 'bg-gray-600']"
           >
-            <!-- icone Humburger -->
+            <!-- Icone Humburger -->
             <i v-if="!isMobileMenuOpen">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +118,7 @@
               </svg>
             </i>
 
-            <!-- icone Close -->
+            <!-- Icone Close -->
             <i v-else class="w-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,9 +137,13 @@
             </i>
           </button>
         </div>
-        <a href="/" class="border-x-2 lg:border-none w-full lg:w-auto">
+        <NuxtLink
+          @click="openDropdownLabel = null"
+          to="/"
+          class="border-x-2 lg:border-none w-full lg:w-auto"
+        >
           <img src="/logo2.svg" alt="logo OMVA" class="w-full h-14 lg:h-20" />
-        </a>
+        </NuxtLink>
         <div class="lg:flex items-center gap-6 hidden">
           <NuxtLink
             to="/membership"
@@ -224,86 +319,3 @@
     </nav>
   </header>
 </template>
-
-<script setup lang="ts">
-const route = useRoute();
-const isActive = (path: string) => {
-  return route.path === path || route.path.startsWith(path + '/');
-};
-
-const isDropdownOpen = (item: NavItem) => {
-  return item.subItems && openDropdownLabel.value === item.label;
-};
-
-const openDropdownLabel = ref<string | null>(null);
-const toggleDropdownMenu = (label: string) => {
-  return (openDropdownLabel.value =
-    openDropdownLabel.value === label ? null : label);
-};
-
-const isMobileMenuOpen = ref(false);
-const toggleMobileMenu = () => {
-  return (isMobileMenuOpen.value = !isMobileMenuOpen.value);
-};
-
-interface NavItem {
-  to?: string;
-  label: string;
-  subItems?: {
-    to: string;
-    label: string;
-  }[];
-}
-
-const navItems: NavItem[] = [
-  { to: '/membership', label: 'ADESÃO' },
-  {
-    label: 'ÓRGÃOS DA ORDEM',
-    subItems: [
-      { to: '/congress', label: 'Congresso' },
-      { to: '/general-assembly', label: 'Assembleia Geral' },
-    ],
-  },
-  {
-    label: 'SOBRE',
-    subItems: [
-      { to: '/about', label: 'OMVA' },
-      { to: '/about/history', label: 'História' },
-      { to: '/docs/estatutos-omva-2003.pdf', label: 'Estatutos' },
-      { to: '/about/governing-body', label: 'Corpo Directivo' },
-    ],
-  },
-  { to: '/contacts', label: 'CONTACTOS' },
-];
-
-const normalizeLabel = (segment: string) => {
-  return segment.replace(/-/g, ' ').replace(/\b\w/g, (c) => c);
-};
-
-const findLabel = (items: NavItem[], path: string): string => {
-  for (const item of items) {
-    if (item.to === path) return item.label;
-    if (item.subItems) {
-      const found = findLabel(item.subItems, path);
-      if (found) return found.toUpperCase();
-    }
-  }
-  return '';
-};
-
-const breadcrumb = computed(() => {
-  const segments = route.path.split('/').filter(Boolean);
-  const breadcrumbs = [{ to: '/', label: 'HOME' }];
-  let currentPath = '';
-
-  for (let i = 0; i < segments.length; i++) {
-    currentPath += '/' + segments[i];
-    const label =
-      findLabel(navItems, currentPath) ||
-      normalizeLabel(segments[i]!).toUpperCase();
-    breadcrumbs.push({ to: currentPath, label });
-  }
-
-  return breadcrumbs;
-});
-</script>

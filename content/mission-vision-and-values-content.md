@@ -1,5 +1,5 @@
 ---
-title: Missão, Visão e Valores | Ordem dos Médicos Veterinários de Angola
+title: Missão, Visão e Valores
 description: A missão, visão e valores da Ordem dos Médicos Veterinários de Angola (OMVA) orientam as prioridades da associação, o nosso trabalho e o nosso comportamento.
 coreValues:
   - 'Ética Profissional: Actuação com integridade, responsabilidade e respeito ao código deontológico.'
