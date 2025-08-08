@@ -1,75 +1,33 @@
-# Nuxt Minimal Starter
+# OMVA WebSite
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A OMVA WebSite é um projeto desenvolvido para a Ordem dos Médicos Veterinários de Angola (OMVA), com o objetivo de fornecer uma plataforma digital que represente e regule a profissão veterinária em Angola. Este site é uma ferramenta essencial para promover o progresso técnico e científico, salvaguardar os interesses profissionais dos membros da OMVA e contribuir ativamente para a saúde pública, sanidade animal e higiene alimentar sustentável.
 
-## Setup
+## Configuração
 
-Make sure to install dependencies:
+Para instalar as dependências do projeto, execute o seguinte comando no terminal:
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Servidor de Desenvolvimento
 
-Start the development server on `http://localhost:3000`:
+O servidor de desenvolvimento vai inicializar na seguinte url: `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Produção
 
-Build the application for production:
+Para colocar o site em produção, execute o seguinte comando:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Para visualizar o site em produção localmente, você pode usar o comando:
 
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
