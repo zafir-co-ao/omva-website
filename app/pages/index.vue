@@ -23,11 +23,13 @@ useSeoMeta({
   <div>
     <!-- Hero Area -->
     <div class="relative">
-      <div class="bg-hero-pattern bg-center bg-cover bg-no-repeat h-[70vh]">
-        <!-- Hero Refrecerence -->
-        <!-- <a href="https://www.vecteezy.com/free-photos/border-collie"
-          >Border Collie Stock photos by Vecteezy</a
-        > -->
+      <div
+        class="bg-hero-pattern bg-center bg-cover bg-no-repeat w-full h-[50vh] sm:h-[60vh] md:h-[70vh]"
+      >
+        <!-- Hero Reference -->
+        <!-- <a href="https://www.vecteezy.com/free-photos/border-collie">
+        Border Collie Stock photos by Vecteezy
+       </a> -->
       </div>
 
       <!-- Hero Overlay -->
