@@ -13,7 +13,7 @@
 
     <!-- Hero -->
     <img
-      src="/images/membership-hero2.png"
+      src="/images/membership-hero.png"
       class="w-full h-auto max-h-[400px] object-cover"
       alt="Capa de adesão"
     />
