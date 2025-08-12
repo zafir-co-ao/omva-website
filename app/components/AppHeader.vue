@@ -306,10 +306,23 @@ const breadcrumb = computed(() => {
           class="flex items-center"
         >
           <template v-if="index < breadcrumb.length - 1">
-            <NuxtLink :to="crumb.to" class="hover:underline">{{
+            <NuxtLink :to="crumb.to" class="hover:text-primary">{{
               crumb.label
             }}</NuxtLink>
-            <span class="mx-1">/</span>
+            <span class="ml-2 text-brown"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </span>
           </template>
           <template v-else>
             <span class="font-medium text-primary">{{ crumb.label }}</span>

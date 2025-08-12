@@ -5,7 +5,25 @@ export default defineContentConfig({
         content: defineCollection({
             type: "page",
             source: "**/*.md",
-            schema: z.object({}),
+        }),
+        home: defineCollection({
+            type: "page",
+            source: "**/*.md",
+            schema: z.object({
+                articles: z.object({
+                    main: z.object({
+                        title: z.string(),
+                        description: z.string(),
+                        imageUrl: z.string(),
+                        link: z.string(),
+                    }),
+                    secondaries: z.array(z.object({
+                        title: z.string(),
+                        description: z.string(),
+                        link: z.string(),
+                    })),
+                }).optional(),
+            }),
         }),
         missionVisionAndValues: defineCollection({
             type: "page",
