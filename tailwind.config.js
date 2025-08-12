@@ -27,7 +27,7 @@ export default {
         '1/2': '3px',
       },
       backgroundImage: {
-        'hero-pattern': "url('/images/hero-teste.jpg')",
+        'hero-pattern': "url('/images/hero-main.jpg')",
       },
     },
   },

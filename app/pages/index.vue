@@ -1,10 +1,34 @@
+<script setup lang="ts">
+const { data } = await useAsyncData('home', () => {
+  return queryCollection('home').path('/home-content').first();
+});
+
+const getArticles = () => {
+  return data.value?.articles || null;
+};
+
+const articles = computed(() => {
+  return getArticles();
+});
+
+useSeoMeta({
+  title: data.value?.title,
+  description: data.value?.description,
+  ogTitle: data.value?.title,
+  ogDescription: data.value?.description,
+});
+</script>
+
 <template>
   <div>
     <!-- Hero Area -->
     <div class="relative">
-      <div
-        class="bg-hero-pattern bg-center bg-cover bg-no-repeat h-[70vh]"
-      ></div>
+      <div class="bg-hero-pattern bg-center bg-cover bg-no-repeat h-[70vh]">
+        <!-- Hero Refrecerence -->
+        <!-- <a href="https://www.vecteezy.com/free-photos/border-collie"
+          >Border Collie Stock photos by Vecteezy</a
+        > -->
+      </div>
 
       <!-- Hero Overlay -->
       <div
@@ -26,41 +50,61 @@
     </div>
 
     <!-- Content Area -->
-    <div class="max-w-8xl mx-auto py-12 md:py-20 px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-4 grid-cols-1 lg:grid-cols-2">
-        <div>Content 1</div>
-        <div class="grid gap-8">
-          <div>
-            <h3 class="font-benton text-xl text-brown mb-1 font-semibold">
-              The Deep Drive in wolrd of veterinary medicine
-            </h3>
-            <AppParagraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Molestiae consectetur laborum eius, eveniet doloribus odio
-              mollitia ex illum? Ipsa aliquam nobis doloremque aspernatur
-              praesentium voluptatem? A eius repellat consectetur quis?
-            </AppParagraph>
+    <div
+      class="max-w-8xl mx-auto py-12 md:py-20 px-4 sm:px-6 lg:px-8 mt-4 lg:mt-10"
+    >
+      <div v-if="articles" class="grid gap-12 grid-cols-1 lg:grid-cols-2">
+        <!-- Left Column -->
+        <div v-if="articles.main">
+          <div class="h-[34vh] pt-3">
+            <NuxtImg
+              :src="articles.main.imageUrl"
+              :alt="articles.main.title"
+              class="h-full w-full object-cover"
+            />
           </div>
-          <div>
-            <h3 class="font-benton text-xl text-brown mb-1 font-semibold">
-              How Develop the veterinary profession
-            </h3>
-            <AppParagraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-              quia similique repellendus nam perspiciatis non, cupiditate
-              deleniti doloribus, voluptatibus alias omnis. Officia pariatur
-              aliquid. cupiditate deleniti doloribus, voluptatibus alias omnis.
-              Officia pariatur aliquid.
-            </AppParagraph>
+          <div class="text-center space-y-5 py-10 pt-20 px-8 bg-secondary">
+            <h2
+              class="font-semibold text-white font-benton text-xl lg:text-2xl"
+            >
+              {{ articles.main.title }}
+            </h2>
+            <p class="text-sm lg:text-base font-roboto text-slate-300">
+              {{ articles.main?.description }}
+            </p>
+
+            <AppButton>
+              <NuxtLink
+                :to="articles.main.link"
+                class="text-white font-medium text-sm font-roboto lg:text-base"
+                >Ler mais</NuxtLink
+              >
+            </AppButton>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div v-if="articles.secondaries">
+          <div class="grid gap-8">
+            <div v-for="(article, idx) in articles.secondaries" :key="idx">
+              <h3
+                class="font-benton text-base lg:text-xl text-brown mb-1 font-semibold"
+              >
+                {{ article.title }}
+              </h3>
+              <AppParagraph>
+                {{ article.description }}
+
+                <NuxtLink
+                  :to="article.link"
+                  class="text-primary hover:underline"
+                  >Ler mais</NuxtLink
+                >
+              </AppParagraph>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<script setup>
-useSeoMeta({
-  title: 'Home | Ordem dos Médicos Veterinários de Angola',
-});
-</script>
