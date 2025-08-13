@@ -9,7 +9,7 @@
         v-for="(item, idx) in items"
         :key="idx"
       >
-        <span class="text-primary mt-1"
+        <span class="text-primary"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

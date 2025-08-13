@@ -56,7 +56,14 @@
               Direita, Apartamento 406, Rua da antiga FILDA, Luanda, Angola
             </p>
             <p><span class="font-medium">Telefone:</span> +244 932 131 935</p>
-            <p><span class="font-medium">Email:</span> geral@omvangola.co.ao</p>
+            <p>
+              <span class="font-medium">Email: </span>
+              <NuxtLink
+                to="mailto:geral@omvangola.co.ao"
+                class="hover:underline"
+                >geral@omvangola.co.ao</NuxtLink
+              >
+            </p>
           </div>
         </div>
       </div>

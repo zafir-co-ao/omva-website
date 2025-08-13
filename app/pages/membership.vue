@@ -38,7 +38,12 @@
             <strong>Questões sobre a Adesão</strong><br />
             Telefone: +244 932 131 935 <br />
             Segunda - Sexta | 8h:30min - 16h:30min <br />
-            Email: <span class="text-[#1b94bf]">geral@omvangola.co.ao</span>
+            Email:
+            <NuxtLink to="mailto:geral@omvangola.co.ao"
+              ><span class="font-bold hover:underline"
+                >geral@omvangola.co.ao</span
+              ></NuxtLink
+            >
           </p>
         </div>
       </div>
@@ -52,6 +57,8 @@
 </template>
 
 <script setup lang="ts">
+import { NuxtLink } from '#components';
+
 const { data } = await useAsyncData('membership', () =>
   queryCollection('content').path('/membership-content').first()
 );
