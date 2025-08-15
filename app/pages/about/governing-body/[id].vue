@@ -4,7 +4,7 @@
       class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-16 lg:space-y-20"
       v-if="member"
     >
-      <AppH1 v-if="data?.title">{{ member.name }}</AppH1>
+      <TheH1 v-if="data?.title">{{ member.name }}</TheH1>
 
       <!-- Corpo Directivo -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
@@ -18,21 +18,21 @@
           </div>
         </div>
         <div class="sm:col-span-2">
-          <AppH2>{{ member.role }}</AppH2>
+          <TheH2>{{ member.role }}</TheH2>
           <div class="mt-6 space-y-6">
-            <AppParagraph>
+            <TheParagraph>
               {{ member.description }}
-            </AppParagraph>
+            </TheParagraph>
 
-            <AppList
+            <CustomUL
               v-if="member.list"
               :items="member.list"
               :isStyled="true"
-            ></AppList>
+            ></CustomUL>
 
-            <AppParagraph v-if="member.subDescription">
+            <TheParagraph v-if="member.subDescription">
               {{ member.subDescription }}
-            </AppParagraph>
+            </TheParagraph>
           </div>
         </div>
       </div>

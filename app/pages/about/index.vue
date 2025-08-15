@@ -2,16 +2,16 @@
   <!-- Container Principal -->
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
     <!-- Título da Página -->
-    <AppH1>{{ data?.title }}</AppH1>
+    <TheH1>{{ data?.title }}</TheH1>
 
     <!-- Grid para o layout de duas colunas -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
       <!-- Coluna Esquerda: Conteúdo Principal -->
       <div class="lg:col-span-2">
         <div class="max-w-none">
-          <AppParagraph v-if="data?.description">{{
+          <TheParagraph v-if="data?.description">{{
             data.description
-          }}</AppParagraph>
+          }}</TheParagraph>
 
           <div v-if="data?.roles" class="mt-8">
             <p class="mb-4 font-roboto text-sm lg:text-base text-brown">
@@ -58,11 +58,11 @@
             </ul>
           </div>
 
-          <AppButton class="bg-white mt-8">
+          <TheButton class="bg-white mt-8">
             <NuxtLink to="/about/mission-vision-and-values"
               >Saber Mais</NuxtLink
             >
-          </AppButton>
+          </TheButton>
         </div>
       </div>
     </div>

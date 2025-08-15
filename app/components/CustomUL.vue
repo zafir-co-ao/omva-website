@@ -1,3 +1,11 @@
+<script setup lang="ts">
+defineProps<{
+  class?: string;
+  isStyled?: boolean;
+  items: string[];
+}>();
+</script>
+
 <template>
   <ul :class="class" class="space-y-2 lg:space-y-3">
     <li
@@ -12,11 +20,3 @@
     </li>
   </ul>
 </template>
-
-<script setup lang="ts">
-defineProps<{
-  class?: string;
-  isStyled?: boolean;
-  items: string[];
-}>();
-</script>

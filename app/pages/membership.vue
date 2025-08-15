@@ -20,8 +20,8 @@
 
     <!-- Botões de Adesão e Renovação de Adesão -->
     <div class="mt-6 flex gap-4 items-center justify-center">
-      <AppButton>Aderir a OMVA</AppButton>
-      <AppButton>Renovar a sua Adesão</AppButton>
+      <TheButton>Aderir a OMVA</TheButton>
+      <TheButton>Renovar a sua Adesão</TheButton>
     </div>
 
     <!-- Grid Principal -->

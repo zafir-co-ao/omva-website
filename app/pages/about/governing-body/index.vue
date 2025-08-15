@@ -3,7 +3,7 @@
     class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 space-y-10"
     v-if="data"
   >
-    <AppH1 v-if="data?.title">{{ data.title }}</AppH1>
+    <TheH1 v-if="data?.title">{{ data.title }}</TheH1>
 
     <!-- Corpo Directivo -->
     <div
@@ -17,17 +17,17 @@
             member.name
           }}</NuxtLink>
         </h2>
-        <AppParagraph class="lg:text-sm">{{
+        <TheParagraph class="lg:text-sm">{{
           member.role.toUpperCase()
-        }}</AppParagraph>
-        <AppParagraph>
+        }}</TheParagraph>
+        <TheParagraph>
           {{ member.description.slice(0, 300).toString() }}...
           <NuxtLink :to="`/about/governing-body/${member.id}`"
             ><span class="text-primary hover:underline"
               >Saber Mais</span
             ></NuxtLink
           >
-        </AppParagraph>
+        </TheParagraph>
       </div>
     </div>
   </div>

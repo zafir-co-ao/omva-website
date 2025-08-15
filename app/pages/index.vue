@@ -75,13 +75,13 @@ useSeoMeta({
               {{ articles.main?.description }}
             </p>
 
-            <AppButton>
+            <TheButton>
               <NuxtLink
                 :to="articles.main.link"
                 class="text-white font-medium text-sm font-roboto lg:text-base"
                 >Ler mais</NuxtLink
               >
-            </AppButton>
+            </TheButton>
           </div>
         </div>
 
@@ -94,7 +94,7 @@ useSeoMeta({
               >
                 {{ article.title }}
               </h3>
-              <AppParagraph>
+              <TheParagraph>
                 {{ article.description }}
 
                 <NuxtLink
@@ -102,7 +102,7 @@ useSeoMeta({
                   class="text-primary hover:underline"
                   >Ler mais</NuxtLink
                 >
-              </AppParagraph>
+              </TheParagraph>
             </div>
           </div>
         </div>

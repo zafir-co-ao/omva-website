@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-    <AppH1 v-if="data?.title">{{ data.title }}</AppH1>
+    <TheH1 v-if="data?.title">{{ data.title }}</TheH1>
 
     <!-- Missão, Visão e Valores -->
     <div class="max-w-2xl mx-auto">

@@ -10,42 +10,42 @@ coreValues:
   - 'Parceria Institucional: Cooperação com entidades públicas, privadas e da sociedade civil para o fortalecimento do setor veterinário.'
 ---
 
-::AppParagraph
+::TheParagraph
 Organizações bem-sucedidas atuam de forma estratégica.
 A declaração de visão, a missão e os valores fundamentais da OMVA orientam as prioridades da associação, o nosso trabalho e o nosso comportamento.
 ::
 
-::AppH2
+::TheH2
 Missão
 ::
 
-::AppParagraph
+::TheParagraph
 Promover, regular e valorizar o exercício da medicina veterinária em Angola,
 assegurando a qualidade dos serviços prestados, a proteção da saúde pública e o bem-estar animal,
 em estrita observância dos princípios éticos e científicos da profissão.
 ::
 
-::AppH2
+::TheH2
 Visão
 ::
 
-::AppParagraph
+::TheParagraph
 Ser reconhecida como uma instituição de excelência na regulação e promoção da medicina veterinária em Angola,
 contribuindo decisivamente para o desenvolvimento agropecuário, a saúde pública e a preservação da biodiversidade.
 ::
 
-::AppH2
+::TheH2
 Valores
 ::
 
 ::CoreValues{:values='coreValues'}
 ::
 
-::AppH2
+::TheH2
 Objectivo
 ::
 
-::AppParagraph
+::TheParagraph
 O objectivo essencial da Ordem é a defesa do exercício da profissão veterinária,
 contribuindo para a sua melhoria e progresso nos domínios científico, técnico e
 profissional, o apoio aos interesses profissionais dos seus membros e a salvaguarda dos

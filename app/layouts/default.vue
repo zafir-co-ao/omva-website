@@ -1,7 +1,7 @@
 <template>
-  <AppHeader />
+  <Header />
   <body class="bg-white">
     <slot />
   </body>
-  <AppFooter />
+  <Footer />
 </template>
