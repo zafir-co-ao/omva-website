@@ -15,6 +15,7 @@ export default {
         brown: '#2F3538',
         greenLight: '#F1F9FA',
         footColor: '#5e6a71',
+        light: '#f7f8f8',
       },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],

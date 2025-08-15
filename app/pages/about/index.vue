@@ -1,3 +1,14 @@
+<script setup lang="ts">
+const { data } = await useAsyncData('about', () =>
+  queryCollection('about').path('/about-content').first()
+);
+
+useSeoMeta({
+  title: data?.value?.title,
+  description: data?.value?.description,
+});
+</script>
+
 <template>
   <!-- Container Principal -->
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
@@ -68,14 +79,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const { data } = await useAsyncData('about', () =>
-  queryCollection('about').path('/about-content').first()
-);
-
-useSeoMeta({
-  title: data?.value?.title,
-  description: data?.value?.description,
-});
-</script>

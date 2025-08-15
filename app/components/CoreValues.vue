@@ -1,3 +1,9 @@
+<script setup lang="ts">
+defineProps<{
+  values: string[];
+}>();
+</script>
+
 <template>
   <div>
     <ul class="space-y-2 lg:space-y-3 mt-0" v-if="values">
@@ -15,9 +21,3 @@
     </ul>
   </div>
 </template>
-
-<script setup lang="ts">
-defineProps<{
-  values: string[];
-}>();
-</script>

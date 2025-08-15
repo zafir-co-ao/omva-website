@@ -1,3 +1,23 @@
+<script setup lang="ts">
+const { data } = await useAsyncData('governing-body', () =>
+  queryCollection('governingBody').path('/governing-body-content').first()
+);
+
+const route = useRoute();
+const memberId = route.params.id as string;
+
+const getMember = (id: string) => {
+  return data.value?.members.find((member) => member.id === id);
+};
+
+const member = getMember(memberId);
+
+useSeoMeta({
+  title: member?.name,
+  description: member?.description,
+});
+</script>
+
 <template>
   <div>
     <div
@@ -47,25 +67,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { NuxtLink } from '#components';
-
-const { data } = await useAsyncData('governing-body', () =>
-  queryCollection('governingBody').path('/governing-body-content').first()
-);
-
-const route = useRoute();
-const memberId = route.params.id as string;
-
-const getMember = (id: string) => {
-  return data.value?.members.find((member) => member.id === id);
-};
-
-const member = getMember(memberId);
-
-useSeoMeta({
-  title: member?.name,
-  description: member?.description,
-});
-</script>

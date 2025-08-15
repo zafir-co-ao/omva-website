@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import { NuxtLink } from '#components';
+
+const { data } = await useAsyncData('governing-body', () =>
+  queryCollection('governingBody').path('/governing-body-content').first()
+);
+
+useSeoMeta({
+  title: data?.value?.title,
+  description: data.value?.description,
+});
+</script>
+
 <template>
   <div
     class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 space-y-10"
@@ -32,16 +45,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { NuxtLink } from '#components';
-
-const { data } = await useAsyncData('governing-body', () =>
-  queryCollection('governingBody').path('/governing-body-content').first()
-);
-
-useSeoMeta({
-  title: data?.value?.title,
-  description: data.value?.description,
-});
-</script>

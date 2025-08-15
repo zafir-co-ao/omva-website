@@ -1,3 +1,10 @@
+<script setup lang="ts">
+defineProps<{
+  title: string;
+  items: string[];
+}>();
+</script>
+
 <template>
   <div>
     <h3 class="text-xl lg:text-2xl font-medium leading-8 font-benton mb-4">
@@ -32,10 +39,3 @@
     </ul>
   </div>
 </template>
-
-<script setup lang="ts">
-defineProps<{
-  title: string;
-  items: string[];
-}>();
-</script>

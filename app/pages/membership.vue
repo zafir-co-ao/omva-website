@@ -1,3 +1,14 @@
+<script setup lang="ts">
+const { data } = await useAsyncData('membership', () =>
+  queryCollection('content').path('/membership-content').first()
+);
+
+useSeoMeta({
+  title: data.value?.title,
+  description: data.value?.description,
+});
+</script>
+
 <template>
   <div class="bg-white">
     <!-- Cabeçalho -->
@@ -55,16 +66,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { NuxtLink } from '#components';
-
-const { data } = await useAsyncData('membership', () =>
-  queryCollection('content').path('/membership-content').first()
-);
-
-useSeoMeta({
-  title: data.value?.title,
-  description: data.value?.description,
-});
-</script>

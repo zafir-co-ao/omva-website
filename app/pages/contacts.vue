@@ -1,3 +1,10 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Contacte-nos',
+  description: 'Entre em contacto connosco para mais informações ou questões.',
+});
+</script>
+
 <template>
   <div class="max-w-8xl mx-auto py-12 md:py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mx-auto">
@@ -44,7 +51,7 @@
         <TheButton>Submeter</TheButton>
       </form>
       <div class="md:col-span-1">
-        <div class="bg-[#f7f8f8] px-6 py-8 pt-16">
+        <div class="bg-light px-6 py-8 pt-16">
           <h2
             class="font-medium font-roboto mb-2 leading-3 text-brown text-xl lg:text-2xl"
           >
@@ -70,10 +77,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-useSeoMeta({
-  title: 'Contacte-nos | Ordem dos Médicos Veterinários de Angola',
-  description: 'Entre em contacto connosco para mais informações ou questões.',
-});
-</script>

@@ -3,12 +3,8 @@ const { data } = await useAsyncData('home', () => {
   return queryCollection('home').path('/home-content').first();
 });
 
-const getArticles = () => {
-  return data.value?.articles || null;
-};
-
 const articles = computed(() => {
-  return getArticles();
+  return data.value?.articles || null;
 });
 
 useSeoMeta({

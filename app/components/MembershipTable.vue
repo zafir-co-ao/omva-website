@@ -1,3 +1,16 @@
+<script setup lang="ts">
+defineProps<{
+  thead: {
+    title1: string;
+    title2: string;
+  };
+  tbody: {
+    title: string;
+    value: string;
+  }[];
+}>();
+</script>
+
 <template>
   <div class="max-w-xl overflow-x-auto">
     <table class="min-w-[400px] w-full text-left border-collapse shadow-lg">
@@ -31,16 +44,3 @@
     </table>
   </div>
 </template>
-
-<script setup lang="ts">
-defineProps<{
-  thead: {
-    title1: string;
-    title2: string;
-  };
-  tbody: {
-    title: string;
-    value: string;
-  }[];
-}>();
-</script>
