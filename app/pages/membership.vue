@@ -26,7 +26,7 @@ useSeoMeta({
     <img
       src="/images/membership-hero.png"
       class="w-full h-auto max-h-[400px] object-cover"
-      alt="Capa de adesão"
+      alt="Banner sobre a adesão"
     />
 
     <!-- Botões de Adesão e Renovação de Adesão -->

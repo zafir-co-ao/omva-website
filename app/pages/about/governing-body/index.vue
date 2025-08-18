@@ -37,7 +37,7 @@ useSeoMeta({
           {{ member.description.slice(0, 300).toString() }}...
           <NuxtLink :to="`/about/governing-body/${member.id}`"
             ><span class="text-primary hover:underline"
-              >Saber Mais</span
+              >Saber mais</span
             ></NuxtLink
           >
         </TheParagraph>

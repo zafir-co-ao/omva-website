@@ -47,6 +47,20 @@ export default defineContentConfig({
                 }).optional(),
             }),
         }),
+        events: defineCollection({
+            type: "page",
+            source: "**/*.md",
+            schema: z.object({
+                events: z.array(z.object({
+                    id: z.string(),
+                    title: z.string(),
+                    description: z.string(),
+                    fullDescription: z.array(z.string()),
+                    date: z.string(),
+                    imageUrl: z.string(),
+                })),
+            }),
+        }),
         governingBody: defineCollection({
             type: "page",
             source: "**/*.md",

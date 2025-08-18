@@ -71,7 +71,7 @@ useSeoMeta({
 
           <TheButton class="bg-white mt-8">
             <NuxtLink to="/about/mission-vision-and-values"
-              >Saber Mais</NuxtLink
+              >Saber mais</NuxtLink
             >
           </TheButton>
         </div>

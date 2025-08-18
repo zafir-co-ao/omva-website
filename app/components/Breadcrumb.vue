@@ -47,7 +47,7 @@ const breadcrumb = computed(() => {
 
 <template>
   <nav
-    class="max-w-8xl mx-auto p-4 text-[12px] font-benton"
+    class="max-w-8xl mx-auto px-4 py-2 text-[12px] font-benton"
     v-if="route.path !== '/'"
   >
     <ul class="flex space-x-2">
