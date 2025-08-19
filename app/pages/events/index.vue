@@ -37,7 +37,7 @@ useSeoMeta({
               ]"
             >
               <NuxtImg
-                :src="event.imageUrl"
+                :src="`/images/events/${event.image}`"
                 class="h-full w-full object-cover transform transition-transform duration-500 group-hover:scale-110"
               />
             </div>

@@ -6,7 +6,7 @@ events:
   - title: 'Workshop sobre Bovinocultura – Huambo'
     id: 'workshop-bovinocultura-huambo'
     date: 'Huambo — 26 e 27 de Setembro de 2025'
-    imageUrl: '/images/events/event-workshop-bovinocultura.jpeg'
+    image: 'event-workshop-bovinocultura.jpeg'
     description: 'Uma oportunidade única para médicos veterinários, técnicos e profissionais do sector partilharem experiências, aprofundarem conhecimentos e contribuírem para o desenvolvimento sustentável da pecuária bovina em Angola.'
     fullDescription:
       - 'Uma oportunidade única para médicos veterinários, técnicos e profissionais do sector partilharem experiências, aprofundarem conhecimentos e contribuírem para o desenvolvimento sustentável da pecuária bovina em Angola.'

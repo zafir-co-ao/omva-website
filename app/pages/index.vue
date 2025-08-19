@@ -51,13 +51,13 @@ useSeoMeta({
     <div
       class="max-w-8xl mx-auto py-12 md:py-20 px-4 sm:px-6 lg:px-8 mt-4 lg:mt-10"
     >
-      <div v-if="articles" class="grid gap-12 grid-cols-1 lg:grid-cols-2">
+      <div class="grid gap-12 grid-cols-1 lg:grid-cols-2">
         <!-- Left Column -->
-        <div v-if="articles.main">
+        <div v-if="data?.event">
           <div class="h-[34vh] pt-3">
             <NuxtImg
-              :src="articles.main.imageUrl"
-              :alt="articles.main.title"
+              :src="`/images/events/${data.event.image}`"
+              :alt="data.event.title"
               class="h-full w-full object-cover"
             />
           </div>
@@ -65,15 +65,15 @@ useSeoMeta({
             <h2
               class="font-semibold text-white font-benton text-xl lg:text-2xl"
             >
-              {{ articles.main.title }}
+              {{ data.event.title }}
             </h2>
             <p class="text-sm lg:text-base font-roboto text-slate-300">
-              {{ articles.main?.description }}
+              {{ data.event.description }}
             </p>
 
             <TheButton>
               <NuxtLink
-                :to="articles.main.link"
+                :to="data.event.link"
                 class="text-white font-medium text-sm font-roboto lg:text-base"
                 >Ler mais</NuxtLink
               >
@@ -82,9 +82,9 @@ useSeoMeta({
         </div>
 
         <!-- Right Column -->
-        <div v-if="articles.secondaries">
+        <div v-if="articles">
           <div class="grid gap-8">
-            <div v-for="(article, idx) in articles.secondaries" :key="idx">
+            <div v-for="(article, idx) in articles" :key="idx">
               <h3
                 class="font-benton text-base lg:text-xl text-brown mb-1 font-semibold"
               >

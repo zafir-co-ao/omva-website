@@ -31,7 +31,7 @@ useSeoMeta({
         <div class="sm:col-span-1">
           <div class="lg:h-72 relative lg:flex lg:justify-end">
             <img
-              :src="member.imageUrl"
+              :src="`/images/governing-body/${member.image}`"
               class="object-cover h-full lg:w-64"
               :alt="member.name"
             />
