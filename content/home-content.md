@@ -2,6 +2,12 @@
 title: 'Home | Ordem dos Médicos Veterinários de Angola'
 description: 'A Ordem dos Médicos Veterinários de Angola é uma organização profissional dedicada à promoção e defesa da profissão veterinária em Angola.'
 
+event:
+  title: 'The title of Noticy'
+  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sapiente soluta dignissimos ullam quasi, commodi temporibus.'
+  image: 'horse-news.jpg'
+  link: '#'
+
 articles:
   - title: 'The Deep Drive in wolrd of veterinary medicine'
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae consectetur laborum eius, eveniet doloribus odio mollitia ex illum? Ipsa aliquam nobis doloremque aspernatur praesentium voluptatem? A eius repellat consectetur quis?'
