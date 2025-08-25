@@ -16,7 +16,7 @@ useSeoMeta({
     <!-- História -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mx-auto">
       <div class="col-span-1 lg:h-64">
-        <img
+        <NuxtImg
           src="/images/history.jpg"
           class="w-full h-auto"
           alt="{{ data.title }}"

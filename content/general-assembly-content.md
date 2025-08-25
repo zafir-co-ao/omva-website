@@ -18,14 +18,14 @@ Competências
 ::TheParagraph
 Compete à Assembleia Geral:
 
-::CustomUL{:items='["a) Eleger e distituir o Conselho Profissional e Deontológico, o Conselho Directivo, o Conselho Fiscal e a Mesa.", "b) Aprovar o plano de actividades e o orçamento apresentados pelo Conselho Directivo.", "c) Aprovar o relatório e contas apresentados pelo Conselho Directivo.", "d) Deliberar sobre proposta de alteração ao estatuto.", "e) Apreciar as actividades dos órgãos nacionais e aprovar moções e recomendações de carácter profissional e associativo.", "f) Fixar os Valores das quotas e das taxas pela emissão e renovação das cédulas Profissionais.", "g) Fixar a percentagem do valor da quotização a atribuir às delegações regionais.", "h) Aprovar os regulamentos necessários à prossecução dos fins de Ordem.", "i) Pronunciar-se sobre quaisquer assuntos que lhe sejam presentes pelos outros órgãos.", "j) Deliberar sobre todos os assuntos que não estejam compreendidos nas competências específicas dos restantes órgãos da Ordem."]'}
+::UnorderedList{:items='["a) Eleger e distituir o Conselho Profissional e Deontológico, o Conselho Directivo, o Conselho Fiscal e a Mesa.", "b) Aprovar o plano de actividades e o orçamento apresentados pelo Conselho Directivo.", "c) Aprovar o relatório e contas apresentados pelo Conselho Directivo.", "d) Deliberar sobre proposta de alteração ao estatuto.", "e) Apreciar as actividades dos órgãos nacionais e aprovar moções e recomendações de carácter profissional e associativo.", "f) Fixar os Valores das quotas e das taxas pela emissão e renovação das cédulas Profissionais.", "g) Fixar a percentagem do valor da quotização a atribuir às delegações regionais.", "h) Aprovar os regulamentos necessários à prossecução dos fins de Ordem.", "i) Pronunciar-se sobre quaisquer assuntos que lhe sejam presentes pelos outros órgãos.", "j) Deliberar sobre todos os assuntos que não estejam compreendidos nas competências específicas dos restantes órgãos da Ordem."]'}
 ::
 ::
 
 ::TheH2
 Mesa da Assembleia Geral
 
-::CustomUL{:class='mt-8' :items='["1. A Mesa da Assembleia Geral é constituída por um presidente e por dois secretários.", "2. O presidente e os secretários são eleitos pela Assembleia Geral entre os Presidentes das Assembleias Regionais."]'}
+::UnorderedList{:class='mt-8' :items='["1. A Mesa da Assembleia Geral é constituída por um presidente e por dois secretários.", "2. O presidente e os secretários são eleitos pela Assembleia Geral entre os Presidentes das Assembleias Regionais."]'}
 ::
 ::
 
@@ -35,7 +35,7 @@ Reuniões Ordinárias
 
 ::TheParagraph
 A Assembleia Geral reúne-se ordinariamente para:
-::CustomUL{:isStyled=true :items='["Eleger a respetiva Mesa da Assembleia Geral, o Conselho Profissional e Deontológico, o Conselho Fiscal e o Conselho Diretivo;", "Discutir e aprovar o plano de atividades e o orçamento;", "Discutir e votar o relatório e as contas do exercício anterior."]'}
+::UnorderedList{:isStyled=true :items='["Eleger a respetiva Mesa da Assembleia Geral, o Conselho Profissional e Deontológico, o Conselho Fiscal e o Conselho Diretivo;", "Discutir e aprovar o plano de atividades e o orçamento;", "Discutir e votar o relatório e as contas do exercício anterior."]'}
 ::
 ::
 

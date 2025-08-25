@@ -23,7 +23,7 @@ useSeoMeta({
     </div>
 
     <!-- Hero -->
-    <img
+    <NuxtImg
       src="/images/membership-hero.png"
       class="w-full h-auto max-h-[400px] object-cover"
       alt="Banner sobre a adesão"

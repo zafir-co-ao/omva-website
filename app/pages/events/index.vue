@@ -37,7 +37,7 @@ useSeoMeta({
               ]"
             >
               <NuxtImg
-                :src="event.imageUrl"
+                :src="`/images/events/${event.image}`"
                 class="h-full w-full object-cover transform transition-transform duration-500 group-hover:scale-110"
               />
             </div>
@@ -81,7 +81,7 @@ useSeoMeta({
           <h3 class="text-brown font-benton font-semibold text-xs sm:text-sm">
             DATA
           </h3>
-          <CustomUL
+          <UnorderedList
             :items="[event.date]"
             :isStyled="true"
             class="text-sm sm:text-base"

@@ -17,7 +17,7 @@ Um grupo restrito de Médicos Veterinários, sediados em Luanda e no Lubango, co
 ::TheParagraph{:class='mt-6'}
 Realiza-se em Luanda uma Assembleia Geral de Médicos Veterinários, na qual são tomadas decisões importantes:
 
-::CustomUL{:isStyled=true :items='["Eleição da Comissão Instaladora, composta por sete (7) médicos veterinários;", "Aprovação do Projeto de Estatutos da Ordem;", "Definição do nome da Ordem como Ordem dos Médicos Veterinários de Angola (OMVA);"]'}
+::UnorderedList{:isStyled=true :items='["Eleição da Comissão Instaladora, composta por sete (7) médicos veterinários;", "Aprovação do Projeto de Estatutos da Ordem;", "Definição do nome da Ordem como Ordem dos Médicos Veterinários de Angola (OMVA);"]'}
 ::
 
 ::TheH2

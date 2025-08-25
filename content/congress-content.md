@@ -22,7 +22,7 @@ Competências
 ::TheParagraph
 Compete ao Congresso:
 
-::CustomUL{:items='["a) Tomar posição sobre o exercício da medicina veterinária.", "b) Pronunciar-se sobre questões de natureza científica, técnica profissional.", "c) Aprovar recomendações de carácter associativo e profissional."]'}
+::UnorderedList{items='["a) Tomar posição sobre o exercício da medicina veterinária.", "b) Pronunciar-se sobre questões de natureza científica, técnica profissional.", "c) Aprovar recomendações de carácter associativo e profissional."]'}
 ::
 ::
 

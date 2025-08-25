@@ -21,6 +21,7 @@ export const navItems: NavItem[] = [
             { to: "/about", label: "OMVA" },
             { to: "/about/history", label: "História" },
             { to: "/about/governing-body", label: "Corpo Directivo" },
+            { to: "/about/regional-councils", label: "Conselhos Regionais" },
         ],
     },
     {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { NavItem } from '~/model/types/navItem';
-import { navItems, otherItems } from '~/model/data/navItems';
+import type { NavItem } from '~/types/navItem';
+import { navItems, otherItems } from '~/data/navItems';
 
 const props = defineProps<{
   route: any;

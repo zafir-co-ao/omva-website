@@ -30,8 +30,8 @@ useSeoMeta({
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
         <div class="sm:col-span-1">
           <div class="lg:h-72 relative lg:flex lg:justify-end">
-            <img
-              :src="member.imageUrl"
+            <NuxtImg
+              :src="`/images/governing-body/${member.image}`"
               class="object-cover h-full lg:w-64"
               :alt="member.name"
             />
@@ -44,11 +44,11 @@ useSeoMeta({
               {{ member.description }}
             </TheParagraph>
 
-            <CustomUL
+            <UnorderedList
               v-if="member.list"
               :items="member.list"
               :isStyled="true"
-            ></CustomUL>
+            ></UnorderedList>
 
             <TheParagraph v-if="member.subDescription">
               {{ member.subDescription }}

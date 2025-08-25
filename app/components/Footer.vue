@@ -1,3 +1,6 @@
+<script setup lang="ts">
+const fullYear = new Date().getFullYear();
+</script>
 <template>
   <footer class="bg-footColor text-white px-4">
     <div
@@ -8,7 +11,7 @@
         class="mb-2 flex items-center justify-center lg:justify-start lg:items-start"
       >
         <NuxtLink to="/"
-          ><img src="/logo.svg" alt="logo OMVA" class="h-16 lg:h-20"
+          ><NuxtImg src="/logo.svg" alt="logo OMVA" class="h-16 lg:h-20"
         /></NuxtLink>
       </div>
 
@@ -92,9 +95,3 @@
     </div>
   </footer>
 </template>
-
-<script setup lang="ts">
-import { NuxtLink } from '#components';
-
-const fullYear = new Date().getFullYear();
-</script>

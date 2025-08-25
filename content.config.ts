@@ -10,19 +10,11 @@ export default defineContentConfig({
             type: "page",
             source: "**/*.md",
             schema: z.object({
-                articles: z.object({
-                    main: z.object({
-                        title: z.string(),
-                        description: z.string(),
-                        imageUrl: z.string(),
-                        link: z.string(),
-                    }),
-                    secondaries: z.array(z.object({
-                        title: z.string(),
-                        description: z.string(),
-                        link: z.string(),
-                    })),
-                }).optional(),
+                articles: z.array(z.object({
+                    title: z.string(),
+                    description: z.string(),
+                    link: z.string(),
+                })),
             }),
         }),
         missionVisionAndValues: defineCollection({
@@ -57,7 +49,7 @@ export default defineContentConfig({
                     description: z.string(),
                     fullDescription: z.array(z.string()),
                     date: z.string(),
-                    imageUrl: z.string(),
+                    image: z.string(),
                 })),
             }),
         }),
@@ -69,10 +61,22 @@ export default defineContentConfig({
                     id: z.string(),
                     name: z.string(),
                     role: z.string(),
-                    imageUrl: z.string().optional(),
+                    image: z.string().optional(),
                     description: z.string(),
                     subDescription: z.string().optional(),
                     list: z.array(z.string()).optional(),
+                })),
+            }),
+        }),
+        regionalCouncils: defineCollection({
+            type: "page",
+            source: "**/*.md",
+            schema: z.object({
+                councils: z.array(z.object({
+                    name: z.string(),
+                    email: z.string(),
+                    address: z.string(),
+                    phoneNumber: z.string().optional(),
                 })),
             }),
         }),

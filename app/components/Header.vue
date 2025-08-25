@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { NavItem } from '~/model/types/navItem';
-import { navItems } from '~/model/data/navItems';
+import type { NavItem } from '~/types/navItem';
+import { navItems } from '~/data/navItems';
 import Breadcrumb from './Breadcrumb.vue';
 
 const route = useRoute();
@@ -77,7 +77,11 @@ const toggleMobileMenu = () => {
           to="/"
           class="border-x-2 lg:border-none w-full lg:w-auto"
         >
-          <img src="/logo2.svg" alt="logo OMVA" class="w-full h-14 lg:h-20" />
+          <NuxtImg
+            src="/logo2.svg"
+            alt="logo OMVA"
+            class="w-full h-14 lg:h-20"
+          />
         </NuxtLink>
         <div class="lg:flex items-center gap-6 hidden">
           <NuxtLink
