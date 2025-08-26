@@ -13,7 +13,21 @@ useSeoMeta({
   title: event.value?.title || 'Evento Desconhecido',
   description:
     event.value?.description || 'Descrição do evento não disponível.',
+  ogTitle: event.value?.title || 'Evento Desconhecido',
+  ogDescription:
+    event.value?.description || 'Descrição do evento não disponível.',
 });
+
+const eventsService = useEventsService();
+const eventOrErr = await eventsService.getEventURL(event.value?.image!);
+if (eventOrErr.isLeft()) {
+  console.error(eventOrErr.value);
+}
+
+const eventImageUrl = ref<string>('');
+if (eventOrErr.isRight()) {
+  eventImageUrl.value = eventOrErr.value.href;
+}
 </script>
 
 <template>
@@ -31,7 +45,7 @@ useSeoMeta({
     <div class="max-w-8xl mx-auto py-12 md:pb-20 md:pt-10 px-4 sm:px-6 lg:px-8">
       <div class="mt-5 grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div class="lg:col-span-1">
-          <NuxtImg :src="`/images/events/${event.image}`" />
+          <NuxtImg :src="eventImageUrl" :alt="event.title" />
         </div>
         <div class="lg:col-span-2 space-y-4 max-w-2xl">
           <TheParagraph v-for="(p, idx) in event.fullDescription" :key="idx">

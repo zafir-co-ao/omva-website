@@ -26,6 +26,18 @@ useSeoMeta({
   description: data.value?.description,
   ogDescription: data.value?.description,
 });
+
+const bannerService = useBannerService();
+const bannerOrErr = await bannerService.getRegionalCouncilsBanner();
+
+if (bannerOrErr.isLeft()) {
+  console.error(bannerOrErr.value);
+}
+
+const bannerImageUrl = ref<string>('');
+if (bannerOrErr.isRight()) {
+  bannerImageUrl.value = bannerOrErr.value.href;
+}
 </script>
 
 <template>
@@ -34,7 +46,11 @@ useSeoMeta({
     <TheH1>{{ data?.title }}</TheH1>
 
     <!-- Banner -->
-    <BannerImage src="/images/banner-a1.jpeg"></BannerImage>
+    <BannerImage
+      v-if="bannerImageUrl"
+      :src="bannerImageUrl"
+      alt="Imagem do Conselho Regional OMVA"
+    ></BannerImage>
 
     <!-- Descrição -->
     <div class="mx-auto max-w-2xl">

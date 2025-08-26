@@ -7,6 +7,18 @@ useSeoMeta({
   title: data.value?.title,
   description: data.value?.description,
 });
+
+const bannerService = useBannerService();
+const bannerOrErr = await bannerService.getMembershipBanner();
+
+if (bannerOrErr.isLeft()) {
+  console.error(bannerOrErr.value);
+}
+
+const bannerImageUrl = ref<string>('');
+if (bannerOrErr.isRight()) {
+  bannerImageUrl.value = bannerOrErr.value.href;
+}
 </script>
 
 <template>
@@ -24,9 +36,10 @@ useSeoMeta({
 
     <!-- Hero -->
     <NuxtImg
-      src="/images/membership-hero.png"
+      v-if="bannerImageUrl"
+      :src="bannerImageUrl"
       class="w-full h-auto max-h-[400px] object-cover"
-      alt="Banner sobre a adesão"
+      alt="Imagem sobre a adesão na OMVA"
     />
 
     <!-- Botões de Adesão e Renovação de Adesão -->

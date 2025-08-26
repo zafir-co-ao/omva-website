@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { NuxtImg } from '#components';
+
 const { data } = await useAsyncData('home', () => {
   return queryCollection('home').path('/home-content').first();
 });
@@ -21,6 +23,29 @@ useSeoMeta({
   ogTitle: data.value?.title,
   ogDescription: data.value?.description,
 });
+
+const bannersService = useBannerService();
+const bannerOrErr = await bannersService.getHomeBanner();
+
+if (bannerOrErr.isLeft()) {
+  console.error(bannerOrErr.value);
+}
+
+const bannerImageUrl = ref<string>('');
+if (bannerOrErr.isRight()) {
+  bannerImageUrl.value = bannerOrErr.value.href;
+}
+
+const eventsService = useEventsService();
+const eventOrErr = await eventsService.getEventURL(event.value?.image!);
+if (eventOrErr.isLeft()) {
+  console.error(eventOrErr.value);
+}
+
+const eventImageUrl = ref<string>('');
+if (eventOrErr.isRight()) {
+  eventImageUrl.value = eventOrErr.value.href;
+}
 </script>
 
 <template>
@@ -28,12 +53,21 @@ useSeoMeta({
     <!-- Hero Area -->
     <div class="relative">
       <div
-        class="bg-hero-pattern bg-center bg-cover bg-no-repeat w-full h-[50vh] sm:h-[60vh] md:h-[70vh]"
+        class="bg-center bg-cover bg-no-repeat w-full h-[50vh] sm:h-[60vh] md:h-[70vh]"
       >
         <!-- Hero Reference -->
-        <!-- <a href="https://www.vecteezy.com/free-photos/border-collie">
-        Border Collie Stock photos by Vecteezy
-       </a> -->
+        <NuxtImg
+          v-if="bannerImageUrl"
+          :src="bannerImageUrl"
+          alt="Hero Image"
+          class="w-full h-full object-cover"
+        />
+        <div
+          v-else
+          class="w-full h-full bg-gray-200 flex items-center justify-center"
+        >
+          <span class="text-gray-500">Imagem não disponível</span>
+        </div>
       </div>
 
       <!-- Hero Overlay -->
@@ -64,7 +98,7 @@ useSeoMeta({
         <div v-if="event">
           <div class="h-[34vh] pt-3">
             <NuxtImg
-              :src="`/images/events/${event.image}`"
+              :src="eventImageUrl"
               :alt="event.title"
               class="h-full w-full object-cover"
             />

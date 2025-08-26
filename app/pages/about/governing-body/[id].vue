@@ -15,7 +15,22 @@ const member = getMember(memberId);
 useSeoMeta({
   title: member?.name,
   description: member?.description,
+  ogTitle: member?.name,
+  ogDescription: member?.description,
 });
+
+const governingBodyService = useGoverningBodyService();
+const governingBodyOrErr = await governingBodyService.getGoverningBodyURL(
+  member?.image!
+);
+
+if (governingBodyOrErr.isLeft()) {
+  console.error(governingBodyOrErr.value);
+}
+const governingBodyImageUrl = ref<string>('');
+if (governingBodyOrErr.isRight()) {
+  governingBodyImageUrl.value = governingBodyOrErr.value.href;
+}
 </script>
 
 <template>
@@ -31,9 +46,9 @@ useSeoMeta({
         <div class="sm:col-span-1">
           <div class="lg:h-72 relative lg:flex lg:justify-end">
             <NuxtImg
-              :src="`/images/governing-body/${member.image}`"
-              class="object-cover h-full lg:w-64"
+              :src="governingBodyImageUrl"
               :alt="member.name"
+              class="object-cover h-full lg:w-64"
             />
           </div>
         </div>

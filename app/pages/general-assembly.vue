@@ -11,13 +11,29 @@ useSeoMeta({
   description: data.value?.description,
   ogDescription: data.value?.description,
 });
+
+const bannerService = useBannerService();
+const bannerOrErr = await bannerService.getGeneralAssemblyBanner();
+
+if (bannerOrErr.isLeft()) {
+  console.error(bannerOrErr.value);
+}
+
+const bannerImageUrl = ref<string>('');
+if (bannerOrErr.isRight()) {
+  bannerImageUrl.value = bannerOrErr.value.href;
+}
 </script>
 
 <template>
   <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
     <TheH1 v-if="data?.title">{{ data.title }}</TheH1>
 
-    <BannerImage src="/images/banner-a1.jpeg"></BannerImage>
+    <BannerImage
+      v-if="bannerImageUrl"
+      alt="Imagem sobre a Assembleia Geral da OMVA"
+      :src="bannerImageUrl"
+    ></BannerImage>
 
     <!-- Assembleia Geral -->
     <ContentRenderer class="grid gap-6" v-if="data" :value="data" />

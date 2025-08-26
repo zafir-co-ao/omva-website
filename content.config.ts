@@ -61,7 +61,7 @@ export default defineContentConfig({
                     id: z.string(),
                     name: z.string(),
                     role: z.string(),
-                    image: z.string().optional(),
+                    image: z.string(),
                     description: z.string(),
                     subDescription: z.string().optional(),
                     list: z.array(z.string()).optional(),

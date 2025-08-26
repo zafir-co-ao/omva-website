@@ -6,7 +6,20 @@ const { data } = await useAsyncData('history', () =>
 useSeoMeta({
   title: data.value?.title,
   description: data.value?.description,
+  ogTitle: data.value?.title,
+  ogDescription: data.value?.description,
 });
+
+const bannerService = useBannerService();
+const bannerOrErr = await bannerService.getHistoryBanner();
+if (bannerOrErr.isLeft()) {
+  console.error(bannerOrErr.value);
+}
+
+const bannerImageUrl = ref<string>('');
+if (bannerOrErr.isRight()) {
+  bannerImageUrl.value = bannerOrErr.value.href;
+}
 </script>
 
 <template>
@@ -17,7 +30,7 @@ useSeoMeta({
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mx-auto">
       <div class="col-span-1 lg:h-64">
         <NuxtImg
-          src="/images/history.jpg"
+          :src="bannerImageUrl"
           class="w-full h-auto"
           alt="{{ data.title }}"
         />

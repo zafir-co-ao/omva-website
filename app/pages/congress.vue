@@ -9,6 +9,18 @@ useSeoMeta({
   description: congress?.description,
   ogDescription: congress?.description,
 });
+
+const bannerService = useBannerService();
+const bannerOrErr = await bannerService.getCongressBanner();
+
+if (bannerOrErr.isLeft()) {
+  console.error(bannerOrErr.value);
+}
+
+const bannerImageUrl = ref<string>('');
+if (bannerOrErr.isRight()) {
+  bannerImageUrl.value = bannerOrErr.value.href;
+}
 </script>
 
 <template>
@@ -17,7 +29,11 @@ useSeoMeta({
     <TheH1 v-if="congress?.title">{{ congress.title }}</TheH1>
 
     <!-- Banner -->
-    <BannerImage src="/images/banner-c1.jpg"></BannerImage>
+    <BannerImage
+      v-if="bannerImageUrl"
+      alt="Imagem do Congresso OMVA"
+      :src="bannerImageUrl"
+    ></BannerImage>
 
     <!-- Congresso -->
     <ContentRenderer class="grid gap-6" v-if="congress" :value="congress" />

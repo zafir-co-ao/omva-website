@@ -7,6 +7,12 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxt/content", "@nuxt/image"],
   css: ["@/assets/css/main.css"],
   components: true,
+  runtimeConfig: {
+    public: {
+      antboxUrl: process.env.ANTBOX_URL || "",
+      antboxTenant: process.env.ANTBOX_TENANT || "",
+    },
+  },
   app: {
     head: {
       link: [

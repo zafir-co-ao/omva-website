@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import EventImage from '~/components/EventImage.vue';
+
 const { data } = await useAsyncData('events', () =>
   queryCollection('events').path('/events-content').first()
 );
@@ -6,6 +8,8 @@ const { data } = await useAsyncData('events', () =>
 useSeoMeta({
   title: data.value?.title,
   description: data.value?.description,
+  ogTitle: data.value?.title,
+  ogDescription: data.value?.description,
 });
 </script>
 
@@ -36,10 +40,11 @@ useSeoMeta({
                 index % 2 !== 1 ? 'order-2 md:order-1' : 'order-1 md:order-2',
               ]"
             >
-              <NuxtImg
-                :src="`/images/events/${event.image}`"
-                class="h-full w-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-              />
+              <EventImage
+                :image="event.image"
+                :key="event.id"
+                :title="event.title"
+              ></EventImage>
             </div>
 
             <div
