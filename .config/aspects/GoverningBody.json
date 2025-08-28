@@ -1,0 +1,15 @@
+{
+  "uuid": "member-uuid",
+  "title": "Governing Body",
+  "description": "Imagem de membro do corpo directivo da OMVA",
+  "mimetype": "application/vnd.antbox.aspect",
+  "parent": "--aspects--",
+  "filters": [
+    [
+      "mimetype",
+      "in",
+      ["image/jpg", "image/jpeg", "image/tiff", "image/gif", "image/webp"]
+    ]
+  ],
+  "aspectProperties": []
+}

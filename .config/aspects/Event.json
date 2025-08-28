@@ -1,0 +1,15 @@
+{
+  "uuid": "event-uuid",
+  "title": "Events",
+  "description": "Imagem de cada evento da OMVA",
+  "mimetype": "application/vnd.antbox.aspect",
+  "parent": "--aspects--",
+  "aspectProperties": [],
+  "filters": [
+    [
+      "mimetype",
+      "in",
+      ["image/png", "image/jpg", "image/jpeg", "image/tiff", "image/webp"]
+    ]
+  ]
+}

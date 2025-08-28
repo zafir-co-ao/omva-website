@@ -1,0 +1,26 @@
+{
+  "uuid": "banner-image",
+  "title": "Banner Image",
+  "description": "Imagem que vai ser exibido no topo da página",
+  "mimetype": "application/vnd.antbox.aspect",
+  "parent": "--aspects--",
+  "aspectProperties": [
+    {
+      "title": "Exibir na página",
+      "name": "page",
+      "type": "string",
+      "required": true,
+      "validationList": [
+        "home",
+        "congress",
+        "general-assembly",
+        "membership-hero",
+        "regional-councils",
+        "history"
+      ]
+    }
+  ],
+  "filters": [
+    ["mimetype", "in", ["image/png", "image/jpg", "image/jpeg", "image/tiff"]]
+  ]
+}
