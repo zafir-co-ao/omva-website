@@ -10,9 +10,8 @@ export default function () {
         reference: string,
     ): Promise<Either<ApiError, URL>> => {
         try {
-            const ref = reference.replace(".", "-");
             const response = await antboxClient.query(
-                [["fid", "==", ref]],
+                [["fid", "==", reference]],
                 1,
                 1,
             );
