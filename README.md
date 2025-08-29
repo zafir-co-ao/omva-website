@@ -18,6 +18,16 @@ O servidor de desenvolvimento vai inicializar na seguinte url: `http://localhost
 npm run dev
 ```
 
+## Execução de script para publicar os artefactos no CMS (Antbox)
+
+No terminal, execute o seguinte comando:
+
+```bash
+npm run antbox-script [antbox-url] [antbox-tenant] [antbox-password]
+```
+
+Att: Se não fornecer os parâmetros, a url será `http://localhost:7180`, o tenant será `omva-website` e a password será `demo`.
+
 ## Produção
 
 Para colocar o site em produção, execute o seguinte comando:
