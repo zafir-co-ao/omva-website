@@ -22,6 +22,10 @@ const isMobileMenuOpen = ref(false);
 const toggleMobileMenu = () => {
   return (isMobileMenuOpen.value = !isMobileMenuOpen.value);
 };
+
+const close = () => {
+  openDropdownLabel.value = null;
+};
 </script>
 
 <template>
@@ -73,7 +77,7 @@ const toggleMobileMenu = () => {
           </button>
         </div>
         <NuxtLink
-          @click="openDropdownLabel = null"
+          @click="close()"
           to="/"
           class="border-x-2 lg:border-none w-full lg:w-auto"
         >
@@ -83,14 +87,10 @@ const toggleMobileMenu = () => {
             class="w-full h-14 lg:h-20"
           />
         </NuxtLink>
-        <div class="lg:flex items-center gap-6 hidden">
-          <NuxtLink
-            to="/membership"
-            class="text-brown hover:underline text-sm font-benton"
-          >
-            Adesão/Renovação
-          </NuxtLink>
-          <TheButton class="ml-8">Entrar</TheButton>
+        <div class="lg:flex items-center hidden">
+          <TheButton>
+            <NuxtLink to="/membership">Inscrição</NuxtLink>
+          </TheButton>
         </div>
         <NuxtLink class="lg:hidden p-4" to="#">
           <i>

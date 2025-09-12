@@ -1,6 +1,6 @@
 ---
-title: 'Adesão à OMVA'
-description: 'A adesão à Ordem dos Médicos Veterinários de Angola (OMVA) é essencial para o exercício legal da profissão, oferecendo benefícios como a emissão de cédula profissional, registo obrigatório e acesso a formações.'
+title: 'Inscrição à OMVA'
+description: 'A inscrição à Ordem dos Médicos Veterinários de Angola (OMVA) é essencial para o exercício legal da profissão, oferecendo benefícios como a emissão de cédula profissional, registo obrigatório e acesso a formações.'
 ---
 
 ::TheParagraph
@@ -23,8 +23,12 @@ Ordem em alargar a presença e eficácia da profissão em benefício da saúde a
 pública.
 ::
 
-::MedicalRegistrationDocsNeeded{:title='Documentos Necessários para Inscrição de Médico Veterinário' :items='["Requerimento dirigido ao Presidente do Conselho Regional", "Diploma autenticado ou certificado reconhecida pelo Ministério das Relações Exteriores (excepto para os licenciados pela Faculdade de medicina Veterinária, Universidade José Eduardo dos Santos)", "Declaração de Reconhecimento de Estudos (INAAREES)", "Bilhete de Identidade (ou Passaporte p/ expatriados)", "Curriculum Vitae", "Declaração de Serviço ou declaração de desemprego emitido pelo INEFOP"]'}
+::MedicalRegistrationDocsNeeded{:title='Documentos Necessários para Inscrição de Médico Veterinário' :items='["2 Fotografias tipo passe", "Requerimento dirigido ao Presidente do Conselho Regional", "Diploma autenticado ou certificado reconhecida pelo Ministério das Relações Exteriores (excepto para os licenciados pela Faculdade de medicina Veterinária, Universidade José Eduardo dos Santos)", "Declaração de Reconhecimento de Estudos (INAAREES)", "Bilhete de Identidade (ou Passaporte p/ expatriados)", "Curriculum Vitae", "Declaração de Serviço ou declaração de desemprego emitido pelo INEFOP"]'}
 ::
 
-::MembershipTable{:thead='{"title1": "Taxas de Adesão", "title2": "Taxas"}' :tbody='[{ "title": "Médicos Veterinários Nacionais", "value": "AKZ 10.000,00" },{ "title": "Médicos Veterinários Estrangeiros", "value": "AKZ 15.000,00" },{ "title": "Pagamento da Cédula Profissional pela 1ª vez", "value": "AKZ 15.000,00" },{ "title": "Renovação da Cédula Profissional", "value": "AKZ 15.000,00" }]'}
+::MembershipTable{:thead='{"title1": "Inscrição", "title2": "Taxas"}' :tbody='[{ "title": "Médicos Veterinários Nacionais", "value": "AKZ 10.000,00" }, { "title": "Médicos Veterinários Estrangeiros", "value": "AKZ 15.000,00" },{ "title": "Pagamento da Cédula Profissional pela 1ª vez", "value": "AKZ 15.000,00" },{"title": "Quota mensal", "value": "AKZ 5.000,00"}, { "title": "Renovação da Cédula Profissional", "value": "AKZ 15.000,00" }]'}
+::
+
+::TheParagraph
+<strong>Atenção:</strong> No acto da inscrição, é obrigatória a liquidação da taxa de inscrição, bem como do pagamento antecipado de, pelo menos, uma mensalidade da quota definida no regulamento da OMVA.
 ::

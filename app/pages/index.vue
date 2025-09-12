@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { NuxtImg } from '#components';
+import EventImage from '~/components/EventImage.vue';
 
 const { data } = await useAsyncData('home', () => {
   return queryCollection('home').path('/home-content').first();
@@ -34,17 +35,6 @@ if (bannerOrErr.isLeft()) {
 const bannerImageUrl = ref<string>('');
 if (bannerOrErr.isRight()) {
   bannerImageUrl.value = bannerOrErr.value.href;
-}
-
-const eventsService = useEventsService();
-const eventOrErr = await eventsService.getEventURL(event.value?.image!);
-if (eventOrErr.isLeft()) {
-  console.error(eventOrErr.value);
-}
-
-const eventImageUrl = ref<string>('');
-if (eventOrErr.isRight()) {
-  eventImageUrl.value = eventOrErr.value.href;
 }
 </script>
 
@@ -82,7 +72,7 @@ if (eventOrErr.isRight()) {
             Defende os teus direitos com responsabilidade e honra os teus
             deveres.
             <NuxtLink to="/membership" class="text-[#16c1d8] hover:underline"
-              >Adesão/Renovação</NuxtLink
+              >Inscrição</NuxtLink
             >
           </p>
         </div>
@@ -93,17 +83,16 @@ if (eventOrErr.isRight()) {
     <div
       class="max-w-8xl mx-auto py-12 md:py-20 px-4 sm:px-6 lg:px-8 mt-4 lg:mt-10"
     >
-      <div class="grid gap-12 grid-cols-1 lg:grid-cols-2">
-        <!-- Left Column -->
-        <div v-if="event">
-          <div class="h-[34vh] pt-3">
-            <NuxtImg
-              :src="eventImageUrl"
-              :alt="event.title"
-              class="h-full w-full object-cover"
-            />
-          </div>
-          <div class="text-center space-y-5 py-10 pt-20 px-8 bg-secondary">
+      <div v-if="event" class="grid grid-cols-1 md:grid-cols-2">
+        <div class="h-80 md:h-[24rem] overflow-hidden">
+          <EventImage
+            :image="event.image"
+            :key="event.id"
+            :title="event.title"
+          ></EventImage>
+        </div>
+        <div class="bg-secondary grid justify-center items-center">
+          <div class="text-center space-y-5 py-10 pt-20 px-8">
             <h2
               class="font-semibold text-white font-benton text-xl lg:text-2xl"
             >
@@ -120,28 +109,6 @@ if (eventOrErr.isRight()) {
                 >Saber mais</NuxtLink
               >
             </TheButton>
-          </div>
-        </div>
-
-        <!-- Right Column -->
-        <div v-if="articles">
-          <div class="grid gap-8">
-            <div v-for="(article, idx) in articles" :key="idx">
-              <h3
-                class="font-benton text-base lg:text-xl text-brown mb-1 font-semibold"
-              >
-                {{ article.title }}
-              </h3>
-              <TheParagraph>
-                {{ article.description }}
-
-                <NuxtLink
-                  :to="article.link"
-                  class="text-primary hover:underline"
-                  >Ler mais</NuxtLink
-                >
-              </TheParagraph>
-            </div>
           </div>
         </div>
       </div>

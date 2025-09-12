@@ -3,6 +3,33 @@ useSeoMeta({
   title: 'Contacte-nos',
   description: 'Entre em contacto connosco para mais informações ou questões.',
 });
+
+interface FormData {
+  name: string;
+  email: string;
+  comment: string;
+}
+
+const formData = ref<FormData>({
+  name: '',
+  email: '',
+  comment: '',
+});
+
+const isFormValid = computed(() => {
+  const nameValid = formData.value.name.trim().length >= 3;
+  const emailValid = /^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/;
+  const commentValid =
+    formData.value.comment.trim().length >= 10 &&
+    formData.value.comment.trim().length <= 250;
+
+  return nameValid && emailValid && commentValid;
+});
+
+const handleSubmit = () => {
+  alert(`Obrigado pelo seu contacto, ${formData.value.name}!`);
+  formData.value = { name: '', email: '', comment: '' };
+};
 </script>
 
 <template>
@@ -10,8 +37,12 @@ useSeoMeta({
     <div class="max-w-5xl mx-auto">
       <TheH1>Contacte-nos</TheH1>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-      <form class="md:col-span-2 space-y-5 group">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 group">
+      <form
+        novalidate
+        @submit.prevent="handleSubmit"
+        class="md:col-span-2 space-y-5 group"
+      >
         <div class="grid">
           <label
             for="name"
@@ -19,8 +50,11 @@ useSeoMeta({
             >NOME <span class="text-red-600 text-base">*</span></label
           >
           <input
+            id="name"
             type="text"
-            name="name"
+            v-model="formData.name"
+            minlength="3"
+            required
             class="py-3 px-4 text-sm lg:text-base border-2 mt-2 outline-secondary text-gray-600"
           />
         </div>
@@ -32,7 +66,8 @@ useSeoMeta({
           >
           <input
             type="email"
-            name="email"
+            required
+            v-model="formData.email"
             class="py-3 px-4 text-sm lg:text-base border-2 mt-2 outline-secondary text-gray-600"
           />
         </div>
@@ -44,11 +79,19 @@ useSeoMeta({
             <span class="text-red-600 text-base">*</span></label
           >
           <textarea
-            name="comment"
-            class="py-3 px-4 h-40 text-sm lg:text-base border-2 mt-2 outline-secondary text-gray-600"
+            required
+            minlength="10"
+            v-model="formData.comment"
+            class="peer py-3 px-4 h-40 text-sm lg:text-base border-2 mt-2 outline-secondary text-gray-600"
+            maxlength="250"
           ></textarea>
         </div>
-        <TheButton>Submeter</TheButton>
+        <TheButton
+          type="submit"
+          :disabled="!isFormValid"
+          class="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-none disabled:hover:text-brown"
+          >Submeter</TheButton
+        >
       </form>
       <div class="md:col-span-1">
         <div class="bg-light px-6 py-8 pt-16">

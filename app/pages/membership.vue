@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { NuxtLink } from '#components';
+
 const { data } = await useAsyncData('membership', () =>
   queryCollection('content').path('/membership-content').first()
 );
@@ -29,7 +31,7 @@ if (bannerOrErr.isRight()) {
         <h2
           class="text-white font-bold font-roboto text-[28px] lg:text-[34px] text-left lg:mt-6"
         >
-          Aderir a OMVA
+          Inscrever-se na OMVA
         </h2>
       </div>
     </div>
@@ -43,9 +45,12 @@ if (bannerOrErr.isRight()) {
     />
 
     <!-- Botões de Adesão e Renovação de Adesão -->
-    <div class="mt-6 flex gap-4 items-center justify-center">
-      <TheButton>Aderir a OMVA</TheButton>
-      <TheButton>Renovar a sua Adesão</TheButton>
+    <div class="mt-6 flex items-center justify-center">
+      <TheButton>
+        <NuxtLink target="_blank" to="/docs/ficha-de-cadastramento-omva.pdf"
+          >Baixar ficha de Inscrição</NuxtLink
+        >
+      </TheButton>
     </div>
 
     <!-- Grid Principal -->
@@ -59,13 +64,13 @@ if (bannerOrErr.isRight()) {
         <div>
           <h3 class="font-semibold text-white mb-1 text-base lg:text-lg"></h3>
           <p class="text-white leading-6 text-sm lg:text-base font-benton">
-            <strong>Questões sobre a Adesão</strong><br />
+            <strong>Questões sobre a Inscrição</strong><br />
             Telefone: +244 932 131 935 <br />
             Segunda - Sexta | 8h:30min - 16h:30min <br />
             Email:
             <NuxtLink to="mailto:geral@omvangola.co.ao"
               ><span class="font-bold hover:underline"
-                >geral@omvangola.co.ao</span
+                >secretariado@omvangola.co.ao</span
               ></NuxtLink
             >
           </p>

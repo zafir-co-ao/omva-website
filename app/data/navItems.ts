@@ -1,7 +1,7 @@
 import type { NavItem } from "../types/navItem";
 
 export const navItems: NavItem[] = [
-    { to: "/membership", label: "ADESÃO" },
+    { to: "/membership", label: "INSCRIÇÃO" },
     {
         label: "ÓRGÃOS DA ORDEM",
         subItems: [
@@ -23,6 +23,10 @@ export const navItems: NavItem[] = [
             { to: "/about/governing-body", label: "Corpo Directivo" },
             { to: "/about/regional-councils", label: "Conselhos Regionais" },
         ],
+    },
+    {
+        label: "PERFIL MÉDICO VETERINÁRIO",
+        to: "/veterinary-profile",
     },
     {
         label: "EVENTOS",

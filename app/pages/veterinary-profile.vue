@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { data } = await useAsyncData('history', () =>
-  queryCollection('content').path('/history-content').first()
+const { data } = await useAsyncData('veterinary-profile', () =>
+  queryCollection('content').path('/veterinary-profile-content').first()
 );
 
 useSeoMeta({
@@ -11,15 +11,11 @@ useSeoMeta({
 });
 
 const bannerService = useBannerService();
-const bannerOrErr = await bannerService.getHistoryBanner();
-if (bannerOrErr.isLeft()) {
-  console.error(bannerOrErr.value);
-}
+const bannerOrErr = await bannerService.getVeterinaryProfileBanner();
+if (bannerOrErr.isLeft()) console.error(bannerOrErr.value);
 
 const bannerImageUrl = ref<string>('');
-if (bannerOrErr.isRight()) {
-  bannerImageUrl.value = bannerOrErr.value.href;
-}
+if (bannerOrErr.isRight()) bannerImageUrl.value = bannerOrErr.value.href;
 </script>
 
 <template>
@@ -36,7 +32,7 @@ if (bannerOrErr.isRight()) {
         />
       </div>
       <div class="col-span-2">
-        <ContentRenderer class="grid gap-10" v-if="data" :value="data" />
+        <ContentRenderer class="grid gap-6" v-if="data" :value="data" />
       </div>
     </div>
   </div>

@@ -57,6 +57,7 @@ export default function () {
         getRegionalCouncilsBanner: () => getBanner(BANNERS.REGIONAL_COUNCILS),
         getMembershipBanner: () => getBanner(BANNERS.MEMBERSHIP),
         getHistoryBanner: () => getBanner(BANNERS.HISTORY),
+        getVeterinaryProfileBanner: () => getBanner(BANNERS.VETERINARY_PROFILE),
     };
 }
 
@@ -67,4 +68,5 @@ enum BANNERS {
     MEMBERSHIP = "membership",
     GENERAL_ASSEMBLY = "general-assembly",
     REGIONAL_COUNCILS = "regional-councils",
+    VETERINARY_PROFILE = "veterinary-profile",
 }
