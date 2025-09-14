@@ -3,8 +3,15 @@ import { EmailSendError } from "./email_send_error";
 
 export interface Sender {
     send(
-        name: string,
-        email: string,
-        message: string,
+        data: SenderRequest,
     ): Promise<Either<EmailSendError, void>>;
+}
+
+export interface SenderRequest {
+    from: {
+        name: string;
+        email: string;
+    };
+    to: string;
+    body: string;
 }
