@@ -8,7 +8,7 @@ export class EmailValue {
         this.#value = email;
     }
 
-    static fromString(
+    static from(
         email: string,
     ): Either<InvalidEmailFormatError, EmailValue> {
         const emailRegex =

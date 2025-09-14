@@ -1,25 +1,22 @@
 import { Either, left, right } from "./either";
+import { InvalidNameError } from "./invalid_name_error";
 
 export class NameValue {
-    #name: string;
+    readonly #value: string;
 
     private constructor(name: string) {
-        this.#name = name;
+        this.#value = name;
     }
 
-    static from(name: string): Either<Error, NameValue> {
+    static from(name: string): Either<InvalidNameError, NameValue> {
         if (!name.trim().length || name.trim().length < 3) {
-            return left(
-                new Error(
-                    "O nome é obrigatório e deve ter pelo menos 3 caracteres",
-                ),
-            );
+            return left(new InvalidNameError("NameValue"));
         }
 
         return right(new NameValue(name));
     }
 
     get value(): string {
-        return this.#name;
+        return this.#value;
     }
 }
