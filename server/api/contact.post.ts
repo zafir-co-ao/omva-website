@@ -14,22 +14,21 @@ export default defineEventHandler(async (event) => {
     if (voidOrErr.value instanceof InvalidEmailFormatError) {
         throw createError({
             statusCode: HttpStatus.BadRequest,
-            statusMessage: "O email informado é inválido",
+            message: "O email informado é inválido",
         });
     }
 
     if (voidOrErr.value instanceof InvalidNameError) {
         throw createError({
             statusCode: HttpStatus.BadRequest,
-            statusMessage:
-                "O nome é obrigatório e deve ter pelo menos 8 caracteres",
+            message: "O nome é obrigatório e deve ter pelo menos 8 caracteres",
         });
     }
 
     if (voidOrErr.value instanceof InvalidMessageError) {
         throw createError({
             statusCode: HttpStatus.BadRequest,
-            statusMessage:
+            message:
                 "A mensagem é obrigatória e deve ter no máximo 250 caracteres",
         });
     }
@@ -37,16 +36,14 @@ export default defineEventHandler(async (event) => {
     if (voidOrErr.value instanceof Error) {
         throw createError({
             statusCode: HttpStatus.ServerError,
-            statusMessage:
-                "Não foi possível enviar os seus dados. Tente mais tarde",
+            message: "Não foi possível enviar os seus dados. Tente mais tarde",
         });
     }
 
     if (voidOrErr.isLeft()) {
         throw createError({
             statusCode: HttpStatus.ServerError,
-            statusMessage:
-                "Não foi possível enviar os seus dados. Tente mais tarde",
+            message: "Não foi possível enviar os seus dados. Tente mais tarde",
         });
     }
 

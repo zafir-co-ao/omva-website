@@ -1,4 +1,4 @@
-import { Either } from "./either";
+import { type Either } from "./either";
 import { EmailSendError } from "./email_send_error";
 
 export interface Sender {

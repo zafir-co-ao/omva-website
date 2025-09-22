@@ -13,8 +13,11 @@ export default defineNuxtConfig({
   components: true,
   runtimeConfig: {
     public: {
-      antboxUrl: process.env.ANTBOX_URL || "",
-      antboxTenant: process.env.ANTBOX_TENANT || "",
+      antboxUrl: process.env.ANTBOX_URL,
+      antboxTenant: process.env.ANTBOX_TENANT,
+      gmailClientId: process.env.GMAIL_CLIENT_ID,
+      gmailClientSecret: process.env.GMAIL_CLIENT_SECRET,
+      gmailRefreshToken: process.env.GMAIL_REFRESH_TOKEN,
     },
   },
   app: {

@@ -39,7 +39,7 @@ const handleSubmit = async () => {
 
     alert(res.message);
   } catch (error: any) {
-    alert(error?.statusMessage);
+    alert(error?.message);
   }
 };
 </script>
