@@ -1,7 +1,8 @@
-import { Either, left, right } from "./either";
+import { type Either, left, right } from "./either";
 import { EmailValue } from "./email_value";
 import { NameValue } from "./name_value";
-import { Sender } from "./sender";
+import { type Sender } from "./sender";
+import { MessageValue } from "./message_value";
 
 const INTERNAL_EMAIL = "geral@omvangola.co.ao";
 
@@ -27,8 +28,9 @@ export class ContactService {
             return left(emailOrErr.value);
         }
 
-        if (!message.trim().length) {
-            return left(new Error("A mensagem é obrigatória"));
+        const messageOrErr = MessageValue.from(message);
+        if (messageOrErr.isLeft()) {
+            return left(messageOrErr.value);
         }
 
         const result = await this.#sender.send({

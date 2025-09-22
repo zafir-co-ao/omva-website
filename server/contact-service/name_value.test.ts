@@ -15,6 +15,7 @@ describe("NameValue", () => {
         const invalidNames = [
             "",
             "Ds",
+            "James",
         ];
 
         invalidNames.forEach((name) => {

@@ -7,28 +7,40 @@ useSeoMeta({
 interface FormData {
   name: string;
   email: string;
-  comment: string;
+  message: string;
 }
 
 const formData = ref<FormData>({
   name: '',
   email: '',
-  comment: '',
+  message: '',
 });
 
 const isFormValid = computed(() => {
-  const nameValid = formData.value.name.trim().length >= 3;
-  const emailValid = /^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/;
-  const commentValid =
-    formData.value.comment.trim().length >= 10 &&
-    formData.value.comment.trim().length <= 250;
+  const { name, email, message } = formData.value;
 
-  return nameValid && emailValid && commentValid;
+  const nameValid = name.trim().length >= 3;
+  const emailValid =
+    /^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/.test(email);
+  const messageValid =
+    message.trim().length >= 10 && message.trim().length <= 250;
+
+  return nameValid && emailValid && messageValid;
 });
 
-const handleSubmit = () => {
-  alert(`Obrigado pelo seu contacto, ${formData.value.name}!`);
-  formData.value = { name: '', email: '', comment: '' };
+const handleSubmit = async () => {
+  const { name, email, message } = formData.value;
+
+  try {
+    const res = await $fetch('/api/contact', {
+      method: 'POST',
+      body: { name, email, message },
+    });
+
+    alert(res.message);
+  } catch (error: any) {
+    alert(error?.statusMessage);
+  }
 };
 </script>
 
@@ -73,7 +85,7 @@ const handleSubmit = () => {
         </div>
         <div class="grid">
           <label
-            for="comment"
+            for="message"
             class="text-brown font-benton font-medium text-sm lg:text-base"
             >QUAL A SUA QUESTÃO/COMENTÁRIO
             <span class="text-red-600 text-base">*</span></label
@@ -81,7 +93,7 @@ const handleSubmit = () => {
           <textarea
             required
             minlength="10"
-            v-model="formData.comment"
+            v-model="formData.message"
             class="peer py-3 px-4 h-40 text-sm lg:text-base border-2 mt-2 outline-secondary text-gray-600"
             maxlength="250"
           ></textarea>

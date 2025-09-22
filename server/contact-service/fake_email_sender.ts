@@ -1,5 +1,5 @@
-import { Either, right } from "./either";
-import { Sender, SenderRequest } from "./sender";
+import { type Either, right } from "./either";
+import type { Sender, SenderRequest } from "./sender";
 import { EmailSendError } from "./email_send_error";
 
 export class FakeEmailSender implements Sender {

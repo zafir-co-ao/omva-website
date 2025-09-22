@@ -1,4 +1,5 @@
-import { Either, left, right } from "./either";
+import { type Either, left, right } from "./either";
+import { InvalidMessageError } from "./invalid_message_error";
 
 export class MessageValue {
     readonly #message: string;
@@ -8,13 +9,9 @@ export class MessageValue {
     }
 
     static from(message: string): Either<Error, MessageValue> {
-        if (!message.trim().length) {
-            return left(new Error("A mensagem é obrigatória"));
-        }
-
-        if (message.trim().length > 250) {
+        if (!message || message.length > 250) {
             return left(
-                new Error("A mensagem deve ter no máximo 250 caracteres"),
+                new InvalidMessageError("MessageValue"),
             );
         }
 

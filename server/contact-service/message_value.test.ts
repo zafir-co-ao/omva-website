@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { MessageValue } from "./message_value";
+import { InvalidMessageError } from "./invalid_message_error";
 
 describe("MessageValue", () => {
     it("Deve criar uma mensagem válida", () => {
@@ -11,9 +12,7 @@ describe("MessageValue", () => {
     it("Deve retornar erro se a mensagem estiver vazia", () => {
         const result = MessageValue.from("");
         expect(result.isLeft()).toBeTruthy();
-        expect((result.value as Error).message).toBe(
-            "A mensagem é obrigatória",
-        );
+        expect(result.value).toBeInstanceOf(InvalidMessageError);
     });
 
     it("Deve retornar erro se a mensagem tiver mais de 250 caracteres", () => {
@@ -25,8 +24,6 @@ describe("MessageValue", () => {
         `;
         const result = MessageValue.from(message);
         expect(result.isLeft()).toBeTruthy();
-        expect((result.value as Error).message).toBe(
-            "A mensagem deve ter no máximo 250 caracteres",
-        );
+        expect(result.value).toBeInstanceOf(InvalidMessageError);
     });
 });

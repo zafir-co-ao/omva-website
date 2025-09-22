@@ -3,6 +3,7 @@ import { ContactService } from "./contact_service";
 import { FakeEmailSender } from "./fake_email_sender";
 import { InvalidEmailFormatError } from "./invalid_email_format_error";
 import { InvalidNameError } from "./invalid_name_error";
+import { InvalidMessageError } from "./invalid_message_error";
 
 test("ContactService.send - Deve enviar todas as informações de contacto", async () => {
     const sender = new FakeEmailSender();
@@ -46,5 +47,5 @@ test("ContactService.send - Deve retornar erro se a mensagem estiver vazia", asy
     const result = await service.send("John Doe", "johndoe@example.com", "");
 
     expect(result.isLeft()).toBe(true);
-    expect((result.value as Error).message).toBe("A mensagem é obrigatória");
+    expect(result.value).toBeInstanceOf(InvalidMessageError);
 });
