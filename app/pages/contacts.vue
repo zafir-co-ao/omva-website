@@ -37,6 +37,8 @@ const handleSubmit = async () => {
       body: { name, email, message },
     });
 
+    formData.value = { name: '', email: '', message: '' };
+
     alert(res.message);
   } catch (error: any) {
     alert(error?.message);

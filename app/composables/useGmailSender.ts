@@ -1,11 +1,7 @@
 import { GmailSender } from "../../server/contact-service/gmail_sender";
 
 export const useGmailSender = () => {
-    const config = useRuntimeConfig();
-
-    const gmailClientId = config.public.gmailClientId as string;
-    const gmailClientSecret = config.public.gmailClientSecret as string;
-    const refreshToken = config.public.gmailRefreshToken as string;
-
-    return new GmailSender(gmailClientId, gmailClientSecret, refreshToken);
+    const accessToken = process.env.ACCESS_TOKEN as string;
+    const refreshToken = process.env.REFRESH_TOKEN as string;
+    return new GmailSender("./credentials.json", accessToken, refreshToken);
 };

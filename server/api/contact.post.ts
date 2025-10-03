@@ -48,6 +48,5 @@ export default defineEventHandler(async (event) => {
     }
 
     setResponseStatus(event, HttpStatus.Ok);
-
-    return { message: "Dados enviados com sucesso!" };
+    return { message: "Informacões enviadas com sucesso!" };
 });

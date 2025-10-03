@@ -30,3 +30,7 @@ logs
 # Public images
 /public/images
 
+# Credentials and token
+credentials.json
+token.json
+
