@@ -130,9 +130,9 @@ const handleSubmit = async () => {
             <p>
               <span class="font-medium">Email: </span>
               <NuxtLink
-                to="mailto:geral@omvangola.co.ao"
+                to="mailto:secretariado@omvangola.co.ao"
                 class="hover:underline"
-                >geral@omvangola.co.ao</NuxtLink
+                >secretariado@omvangola.co.ao</NuxtLink
               >
             </p>
           </div>

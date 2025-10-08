@@ -68,7 +68,7 @@ if (bannerOrErr.isRight()) {
             Telefone: +244 932 131 935 <br />
             Segunda - Sexta | 8h:30min - 16h:30min <br />
             Email:
-            <NuxtLink to="mailto:geral@omvangola.co.ao"
+            <NuxtLink to="mailto:secretariado@omvangola.co.ao"
               ><span class="font-bold hover:underline"
                 >secretariado@omvangola.co.ao</span
               ></NuxtLink
