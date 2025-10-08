@@ -4,7 +4,7 @@ import { NameValue } from "./name_value";
 import { type Sender } from "./sender";
 import { MessageValue } from "./message_value";
 
-const INTERNAL_EMAIL = "vanilsonpaulino23@gmail.com";
+const INTERNAL_EMAIL = "secretariado@omvangola.co.ao";
 
 export class ContactService {
     readonly #sender: Sender;

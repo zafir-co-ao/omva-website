@@ -14,39 +14,43 @@ export default defineEventHandler(async (event) => {
     if (voidOrErr.value instanceof InvalidEmailFormatError) {
         throw createError({
             statusCode: HttpStatus.BadRequest,
-            message: "O email informado é inválido",
+            statusMessage: "O email informado e invalido",
         });
     }
 
     if (voidOrErr.value instanceof InvalidNameError) {
         throw createError({
             statusCode: HttpStatus.BadRequest,
-            message: "O nome é obrigatório e deve ter pelo menos 8 caracteres",
+            statusMessage:
+                "O nome e obrigatorio e deve ter pelo menos 8 caracteres",
         });
     }
 
     if (voidOrErr.value instanceof InvalidMessageError) {
         throw createError({
             statusCode: HttpStatus.BadRequest,
-            message:
-                "A mensagem é obrigatória e deve ter no máximo 250 caracteres",
+            statusMessage:
+                "A mensagem e obrigatoria e deve ter no maximo 250 caracteres",
         });
     }
 
     if (voidOrErr.value instanceof Error) {
         throw createError({
             statusCode: HttpStatus.ServerError,
-            message: "Não foi possível enviar os seus dados. Tente mais tarde",
+            statusMessage:
+                "Nao foi possivel enviar os seus dados. Tente mais tarde",
         });
     }
 
     if (voidOrErr.isLeft()) {
         throw createError({
             statusCode: HttpStatus.ServerError,
-            message: "Não foi possível enviar os seus dados. Tente mais tarde",
+            statusMessage:
+                "Nao foi possivel enviar os seus dados. Tente mais tarde",
         });
     }
 
     setResponseStatus(event, HttpStatus.Ok);
+
     return { message: "Informacões enviadas com sucesso!" };
 });

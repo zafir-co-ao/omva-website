@@ -9,7 +9,7 @@ GOVERNING_BODY_IMAGES_DIR=$(echo ".config/images/governing-body/")
 
 SERVER="${1:-http://localhost:7180}"
 TENANT="${2:-omva-website}"
-PASSWORD="${3:-demo}"
+PASSWORD="demo"
 
 # Verifica se a palavra passe foi fornecida
 if [ -z "${PASSWORD:-}" ]; then
