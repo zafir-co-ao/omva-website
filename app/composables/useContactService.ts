@@ -7,4 +7,4 @@ const fakeSender = useFakeEmailSender();
 
 const sender = process.env.NODE_ENV === "development" ? fakeSender : mailSender;
 
-export const useContactService = () => new ContactService(mailSender);
+export const useContactService = () => new ContactService(sender);

@@ -12,7 +12,7 @@ export default function () {
         try {
             const response = await antboxClient.query(
                 [
-                    ["properties.banner-image:page", "==", page],
+                    ["properties.banner-image:page", "in", [page]],
                 ],
                 1,
                 1,
