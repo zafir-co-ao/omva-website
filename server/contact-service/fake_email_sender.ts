@@ -1,14 +1,10 @@
-import { type Either, right } from "./either";
 import type { Sender, SenderRequest } from "./sender";
-import { EmailSendError } from "./email_send_error";
 
 export class FakeEmailSender implements Sender {
-    async send(
-        data: SenderRequest,
-    ): Promise<Either<EmailSendError, void>> {
+    async send(data: SenderRequest): Promise<void> {
         console.log(
             `O ${data.from.name} enviou a seguinte mensagem: ${data.body}`,
         );
-        return right(undefined);
+        return Promise.resolve(undefined);
     }
 }

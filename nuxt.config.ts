@@ -15,9 +15,7 @@ export default defineNuxtConfig({
     public: {
       antboxUrl: process.env.ANTBOX_URL,
       antboxTenant: process.env.ANTBOX_TENANT,
-      gmailClientId: process.env.GMAIL_CLIENT_ID,
-      gmailClientSecret: process.env.GMAIL_CLIENT_SECRET,
-      gmailRefreshToken: process.env.GMAIL_REFRESH_TOKEN,
+      filekeyPath: process.env.FILE_KEY_PATH,
     },
   },
   app: {

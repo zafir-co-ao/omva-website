@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { ContactServiceHandler } from '~~/server/contact-service/contact_service_handler';
+
 useSeoMeta({
   title: 'Contacte-nos',
   description: 'Entre em contacto connosco para mais informações ou questões.',
 });
+
+const service = new ContactServiceHandler();
 
 interface FormData {
   name: string;
@@ -20,8 +24,10 @@ const isFormValid = computed(() => {
   const { name, email, message } = formData.value;
 
   const nameValid = name.trim().length >= 3;
+
   const emailValid =
     /^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/.test(email);
+
   const messageValid =
     message.trim().length >= 10 && message.trim().length <= 250;
 
@@ -32,14 +38,17 @@ const handleSubmit = async () => {
   const { name, email, message } = formData.value;
 
   try {
-    const res = await $fetch('/api/contact', {
-      method: 'POST',
-      body: { name, email, message },
-    });
+    const res = await service.sendMail(name, email, message);
+
+    formData.value = { name: '', email: '', message: '' };
 
     alert(res.message);
   } catch (error: any) {
-    alert(error?.message);
+    const message =
+      error?.status === 500
+        ? 'Não foi possível enviar as informações. Tente mais tarde'
+        : error?.statusMessage;
+    alert(message);
   }
 };
 </script>

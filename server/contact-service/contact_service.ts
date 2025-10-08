@@ -4,7 +4,7 @@ import { NameValue } from "./name_value";
 import { type Sender } from "./sender";
 import { MessageValue } from "./message_value";
 
-const INTERNAL_EMAIL = "silvanocavimbi20@gmail.com";
+const INTERNAL_EMAIL = "secretariado@omvangola.co.ao";
 
 export class ContactService {
     readonly #sender: Sender;
@@ -33,7 +33,7 @@ export class ContactService {
             return left(messageOrErr.value);
         }
 
-        const result = await this.#sender.send({
+        await this.#sender.send({
             from: {
                 email,
                 name,
@@ -41,9 +41,6 @@ export class ContactService {
             body: message,
             to: INTERNAL_EMAIL,
         });
-        if (result.isLeft()) {
-            return left(result.value);
-        }
 
         return right(undefined);
     }
