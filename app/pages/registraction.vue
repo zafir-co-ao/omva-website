@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { NuxtLink } from '#components';
 
-const { data } = await useAsyncData('membership', () =>
-  queryCollection('content').path('/membership-content').first()
+const { data } = await useAsyncData('registraction', () =>
+  queryCollection('content').path('/registraction-content').first()
 );
 
 useSeoMeta({
@@ -11,7 +11,7 @@ useSeoMeta({
 });
 
 const bannerService = useBannerService();
-const bannerOrErr = await bannerService.getMembershipBanner();
+const bannerOrErr = await bannerService.getRegistractionBanner();
 
 if (bannerOrErr.isLeft()) {
   console.error(bannerOrErr.value);

@@ -71,7 +71,7 @@ if (bannerOrErr.isRight()) {
           <p class="text-sm md:text-base mt-4 font-roboto">
             Defende os teus direitos com responsabilidade e honra os teus
             deveres.
-            <NuxtLink to="/membership" class="text-[#16c1d8] hover:underline"
+            <NuxtLink to="/registraction" class="text-[#16c1d8] hover:underline"
               >Inscrição</NuxtLink
             >
           </p>

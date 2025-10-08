@@ -89,7 +89,7 @@ const close = () => {
         </NuxtLink>
         <div class="lg:flex items-center hidden">
           <TheButton>
-            <NuxtLink to="/membership">Inscrição</NuxtLink>
+            <NuxtLink to="/registraction">Inscrição</NuxtLink>
           </TheButton>
         </div>
         <NuxtLink class="lg:hidden p-4" to="#">

@@ -1,7 +1,7 @@
 import type { NavItem } from "../types/navItem";
 
 export const navItems: NavItem[] = [
-    { to: "/membership", label: "INSCRIÇÃO" },
+    { to: "/registraction", label: "INSCRIÇÃO" },
     {
         label: "ÓRGÃOS DA ORDEM",
         subItems: [

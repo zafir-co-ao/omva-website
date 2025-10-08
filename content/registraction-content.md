@@ -26,7 +26,7 @@ pública.
 ::MedicalRegistrationDocsNeeded{:title='Documentos Necessários para Inscrição de Médico Veterinário' :items='["2 Fotografias tipo passe", "Requerimento dirigido ao Presidente do Conselho Regional", "Diploma autenticado ou certificado reconhecida pelo Ministério das Relações Exteriores (excepto para os licenciados pela Faculdade de medicina Veterinária, Universidade José Eduardo dos Santos)", "Declaração de Reconhecimento de Estudos (INAAREES)", "Bilhete de Identidade (ou Passaporte p/ expatriados)", "Curriculum Vitae", "Declaração de Serviço ou declaração de desemprego emitido pelo INEFOP"]'}
 ::
 
-::MembershipTable{:thead='{"title1": "Inscrição", "title2": "Taxas"}' :tbody='[{ "title": "Médicos Veterinários Nacionais", "value": "AKZ 10.000,00" }, { "title": "Médicos Veterinários Estrangeiros", "value": "AKZ 15.000,00" },{ "title": "Pagamento da Cédula Profissional pela 1ª vez", "value": "AKZ 15.000,00" },{"title": "Quota mensal", "value": "AKZ 5.000,00"}, { "title": "Renovação da Cédula Profissional", "value": "AKZ 15.000,00" }]'}
+::RegistractionTable{:thead='{"title1": "Inscrição", "title2": "Taxas"}' :tbody='[{ "title": "Médicos Veterinários Nacionais", "value": "AKZ 10.000,00" }, { "title": "Médicos Veterinários Estrangeiros", "value": "AKZ 15.000,00" },{ "title": "Pagamento da Cédula Profissional pela 1ª vez", "value": "AKZ 15.000,00" },{"title": "Quota mensal", "value": "AKZ 5.000,00"}, { "title": "Renovação da Cédula Profissional", "value": "AKZ 15.000,00" }]'}
 ::
 
 ::TheParagraph
