@@ -83,15 +83,17 @@ if (bannerOrErr.isRight()) {
     <div
       class="max-w-8xl mx-auto py-12 md:py-20 px-4 sm:px-6 lg:px-8 mt-4 lg:mt-10"
     >
-      <div v-if="event" class="grid grid-cols-1 md:grid-cols-2">
-        <div class="h-80 md:h-[24rem] overflow-hidden">
+      <div v-if="event" class="grid grid-cols-1 md:grid-cols-3">
+        <div class="h-[70vh] md:h-[34rem] overflow-hidden">
           <EventImage
             :image="event.image"
             :key="event.id"
             :title="event.title"
           ></EventImage>
         </div>
-        <div class="bg-secondary grid justify-center items-center">
+        <div
+          class="bg-secondary grid justify-center items-center md:col-span-2"
+        >
           <div class="text-center space-y-5 py-10 pt-20 px-8">
             <h2
               class="font-semibold text-white font-benton text-xl lg:text-2xl"
