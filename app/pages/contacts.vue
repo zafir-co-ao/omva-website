@@ -24,12 +24,8 @@ const isFormValid = computed(() => {
   const { name, email, message } = formData.value;
 
   const nameValid = name.trim().length >= 3;
-
-  const emailValid =
-    /^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/.test(email);
-
-  const messageValid =
-    message.trim().length >= 10 && message.trim().length <= 250;
+  const emailValid = email.trim().length > 0;
+  const messageValid = message.trim().length >= 10;
 
   return nameValid && emailValid && messageValid;
 });

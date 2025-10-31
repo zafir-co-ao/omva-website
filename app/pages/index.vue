@@ -14,10 +14,6 @@ const event = computed(() => {
   return eventsContent?.events[0] || null;
 });
 
-const articles = computed(() => {
-  return data.value?.articles || null;
-});
-
 useSeoMeta({
   title: data.value?.title,
   description: data.value?.description,
@@ -83,7 +79,7 @@ if (bannerOrErr.isRight()) {
     <div
       class="max-w-8xl mx-auto py-12 md:py-20 px-4 sm:px-6 lg:px-8 mt-4 lg:mt-10"
     >
-      <div v-if="event" class="grid grid-cols-1 md:grid-cols-3">
+      <div v-if="event" class="grid grid-cols-1 md:grid-cols-3 shadow-xl">
         <div class="h-[70vh] md:h-[34rem] overflow-hidden">
           <EventImage
             :image="event.image"
