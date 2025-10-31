@@ -3,6 +3,17 @@ title: 'Eventos OMVA'
 description: 'Descubra os próximos eventos e atividades que a nossa organização está a planear.'
 
 events:
+  - title: 'A Qualidade do Produto de Origem Animal Esperada no Consumidor (Restauração, Hotelaria e Supermercados)'
+    id: 'qualidade-produto-origem-animal'
+    date: 'Luanda — 05 de Dezembro de 2025'
+    image: 'event-qualidade-produto-origem-animal'
+    description: 'A OMVA e a FENACOOPA têm o prazer de anunciar o evento “Do Campo ao Prato – A Qualidade do Produto de Origem Animal Esperada pelo Consumidor”.'
+    fullDescription:
+      - 'A OMVA e a FENACOOPA têm o prazer de anunciar o evento “Do Campo ao Prato – A Qualidade do Produto de Origem Animal Esperada pelo Consumidor”.'
+      - 'Um encontro imperdível para todos os que acreditam que a qualidade e a segurança alimentar começam no campo e terminam na mesa do consumidor!'
+      - 'Inscrições abertas! WhatsApp: +244 932 131 935 | E-mail: geral@omvangola.co.ao'
+      - 'Participe e faça parte da conversa sobre o futuro da produção e consumo de alimentos de origem animal em Angola!'
+
   - title: 'Workshop sobre Aquicultura em Angola'
     id: 'workshop-aquicultura-angola'
     date: 'Luanda — 10 de Outubro de 2025'
