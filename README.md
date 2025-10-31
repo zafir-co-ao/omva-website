@@ -64,9 +64,21 @@ npm run antbox-script [antbox-url] [antbox-tenant]
 
 ### 1. Gerar build do projeto
 
+Criar uma tag
+
 ```bash
-npm run build
+git tag v*.*.*
 ```
+
+> Ex.: git tag v1.0.0
+
+Depois, executar:
+
+```bash
+git push origin v*.*.*
+```
+
+> Ex.: git push origin v1.0.0
 
 ### 2. Pré-visualizar produção localmente
 
