@@ -42,7 +42,7 @@ const handleSubmit = async () => {
   } catch (error: any) {
     const message =
       error?.status === 500
-        ? 'Não foi possível enviar as informações. Tente mais tarde'
+        ? 'Não foi possível enviar as informações. Tente mais tarde.'
         : error?.statusMessage;
     alert(message);
   }
