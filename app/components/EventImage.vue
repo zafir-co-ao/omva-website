@@ -2,7 +2,7 @@
 const props = defineProps<{
   image: string;
   title: string;
-  key: string;
+  id: string;
 }>();
 
 const eventsService = useEventsService();
@@ -17,7 +17,7 @@ const { data: eventImageUrl } = await useAsyncData(
 
 <template>
   <NuxtImg
-    :key="key"
+    :key="id"
     :src="eventImageUrl"
     :alt="title"
     class="h-full w-full transform transition-transform duration-500 md:hover:scale-110 md:group-hover:scale-110"

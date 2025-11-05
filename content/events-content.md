@@ -9,10 +9,14 @@ events:
     image: 'event-qualidade-produto-origem-animal'
     description: 'A OMVA e a FENACOOPA têm o prazer de anunciar o evento “Do Campo ao Prato – A Qualidade do Produto de Origem Animal Esperada pelo Consumidor”.'
     fullDescription:
-      - 'A OMVA e a FENACOOPA têm o prazer de anunciar o evento “Do Campo ao Prato – A Qualidade do Produto de Origem Animal Esperada pelo Consumidor”.'
-      - 'Um encontro imperdível para todos os que acreditam que a qualidade e a segurança alimentar começam no campo e terminam na mesa do consumidor!'
-      - 'Inscrições abertas! WhatsApp: +244 932 131 935 | E-mail: geral@omvangola.co.ao'
-      - 'Participe e faça parte da conversa sobre o futuro da produção e consumo de alimentos de origem animal em Angola!'
+      - 'Este evento tem como objectivo fortalecer a ligação entre produtores, médicos veterinários, consumidores, restaurantes e unidades hoteleiras, promovendo a segurança alimentar, a qualidade dos produtos de origem animal e a valorização da produção nacional.'
+      - 'A iniciativa reunirá profissionais do sector agropecuário, da restauração, hotelaria e distribuição, num espaço de partilha de experiências, troca de conhecimentos e criação de parcerias estratégicas que contribuam para o desenvolvimento sustentável da cadeia produtiva e de consumo responsável.'
+      - 'O evento incluirá momentos de debate, exposição de produtos, networking e almoço, proporcionando um ambiente dinâmico de interação entre o sector produtivo e o mercado consumidor.'
+
+    contactInfo:
+      - 'WhatsApp: +244 932 131 935'
+      - 'E-mail: geral@omvangola.co.ao'
+      - 'Local: Restaurante Forno – Luanda'
 
   - title: 'Workshop sobre Aquicultura em Angola'
     id: 'workshop-aquicultura-angola'

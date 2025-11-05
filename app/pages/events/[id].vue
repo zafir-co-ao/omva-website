@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import TheParagraph from '~/components/TheParagraph.vue';
+
 const route = useRoute();
 
 const { data } = await useAsyncData('event', () =>
@@ -51,6 +53,12 @@ if (eventOrErr.isRight()) {
           <TheParagraph v-for="(p, idx) in event.fullDescription" :key="idx">
             {{ p }}</TheParagraph
           >
+
+          <div class="space-y-1">
+            <TheParagraph v-for="(v, idx) in event.contactInfo" :key="idx">{{
+              v
+            }}</TheParagraph>
+          </div>
         </div>
       </div>
     </div>
