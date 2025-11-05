@@ -15,6 +15,16 @@ export default defineContentConfig({
                     description: z.string(),
                     link: z.string(),
                 })),
+                partners: z.object({
+                    main: z.object({
+                        name: z.string(),
+                        logo: z.string(),
+                    }),
+                    others: z.array(z.object({
+                        name: z.string(),
+                        logo: z.string(),
+                    })),
+                }),
             }),
         }),
         missionVisionAndValues: defineCollection({
@@ -48,6 +58,7 @@ export default defineContentConfig({
                     title: z.string(),
                     description: z.string(),
                     fullDescription: z.array(z.string()),
+                    contactInfo: z.array(z.string()).optional(),
                     date: z.string(),
                     image: z.string(),
                 })),

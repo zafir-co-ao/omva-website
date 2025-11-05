@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { NuxtImg } from '#components';
 import EventImage from '~/components/EventImage.vue';
+import Slide from '~/components/Slide.vue';
 
 const { data } = await useAsyncData('home', () => {
   return queryCollection('home').path('/home-content').first();
@@ -51,9 +52,7 @@ if (bannerOrErr.isRight()) {
         <div
           v-else
           class="w-full h-full bg-gray-200 flex items-center justify-center"
-        >
-          <span class="text-gray-500">Imagem não disponível</span>
-        </div>
+        ></div>
       </div>
 
       <!-- Hero Overlay -->
@@ -79,11 +78,12 @@ if (bannerOrErr.isRight()) {
     <div
       class="max-w-8xl mx-auto py-12 md:py-20 px-4 sm:px-6 lg:px-8 mt-4 lg:mt-10"
     >
+      <!-- Event Section -->
       <div v-if="event" class="grid grid-cols-1 md:grid-cols-3 shadow-xl">
         <div class="h-[70vh] md:h-[34rem] overflow-hidden">
           <EventImage
             :image="event.image"
-            :key="event.id"
+            :id="event.id"
             :title="event.title"
           ></EventImage>
         </div>
@@ -108,6 +108,39 @@ if (bannerOrErr.isRight()) {
               >
             </TheButton>
           </div>
+        </div>
+      </div>
+
+      <!-- Partners Section -->
+      <div v-if="data?.partners" class="mt-20 px-4">
+        <div class="border-b-[3px] w-fit mb-16 mx-auto lg:mx-0">
+          <h2
+            class="mb-4 text-brown text-2xl sm:text-3xl font-benton font-medium text-left"
+          >
+            Nossos Parceiros
+          </h2>
+        </div>
+
+        <div
+          class="relative flex flex-col lg:flex-row gap-10 lg:gap-10 items-center lg:items-start"
+        >
+          <div
+            v-if="data.partners.main"
+            class="shadow-lg border w-full sm:w-[24rem] lg:w-[40rem] py-12 text-center"
+          >
+            <NuxtImg
+              :src="data.partners.main.logo"
+              :alt="data.partners.main.name"
+              class="mx-auto mb-4 h-16 sm:h-20"
+            />
+            <p
+              class="text-brown text-xl sm:text-2xl font-normal font-roboto px-4"
+            >
+              {{ data.partners.main.name }}
+            </p>
+          </div>
+
+          <Slide v-if="data.partners.others" :partners="data.partners.others" />
         </div>
       </div>
     </div>

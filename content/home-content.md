@@ -20,4 +20,16 @@ articles:
   - title: 'The Future of Veterinary Medicine'
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta quia similique repellendus nam perspiciatis non, cupiditate deleniti doloribus, voluptatibus alias omnis. Officia pariatur aliquid. cupiditate deleniti doloribus, voluptatibus alias omnis. Officia pariatur aliquid.'
     link: '#'
+
+partners:
+  main:
+    name: 'Vetify'
+    logo: '/partners/vetify_logo.svg'
+
+  others:
+    - name: 'Centro Veterinário de Luanda'
+      logo: '/partners/cvl_logo.png'
+
+    - name: 'Casa dos Animais'
+      logo: '/partners/casa_dos_animais_logo.jpeg'
 ---
