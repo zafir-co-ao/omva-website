@@ -113,7 +113,7 @@ if (bannerOrErr.isRight()) {
 
       <!-- Partners Section -->
       <div v-if="data?.partners" class="mt-20 px-4">
-        <div class="border-b-[3px] w-fit mb-16 mx-auto lg:mx-0">
+        <div class="border-b-[3px] w-fit mb-4 mx-auto lg:mx-0">
           <h2
             class="mb-4 text-brown text-2xl sm:text-3xl font-benton font-medium text-left"
           >
@@ -122,25 +122,25 @@ if (bannerOrErr.isRight()) {
         </div>
 
         <div
-          class="relative flex flex-col lg:flex-row gap-10 lg:gap-10 items-center lg:items-start"
+          v-if="data.partners.others"
+          class="mt-12 grid sm:grid-cols-2 xl:grid-cols-4 items-center gap-4 sm:gap-6 transition-all duration-300 w-full"
         >
-          <div
-            v-if="data.partners.main"
-            class="shadow-lg border w-full sm:w-[24rem] lg:w-[40rem] py-12 text-center"
+          <NuxtLink
+            v-for="(partner, i) in data.partners.others"
+            :key="i"
+            :to="partner.linkPage"
+            target="_blank"
+            class="px-4 py-5 sm:p-6 text-center h-34 flex-shrink-0 border xl:hover:scale-105 transition-transform duration-300"
           >
-            <NuxtImg
-              :src="data.partners.main.logo"
-              :alt="data.partners.main.name"
-              class="mx-auto mb-4 h-16 sm:h-20"
+            <img
+              :src="partner.logo"
+              :alt="partner.name"
+              class="mx-auto mb-3 sm:mb-4 h-14 sm:h-20 object-contain"
             />
-            <p
-              class="text-brown text-xl sm:text-2xl font-normal font-roboto px-4"
-            >
-              {{ data.partners.main.name }}
+            <p class="text-brown text-sm sm:text-base font-normal font-roboto">
+              {{ partner.name }}
             </p>
-          </div>
-
-          <Slide v-if="data.partners.others" :partners="data.partners.others" />
+          </NuxtLink>
         </div>
       </div>
     </div>

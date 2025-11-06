@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { NuxtLink } from '#components';
+
 const props = defineProps<{
-  partners: { logo: string; name: string }[];
+  partners: { logo: string; name: string; linkPage: string }[];
 }>();
 
 const currentIndex = ref(0);
@@ -86,10 +88,12 @@ onUnmounted(() => {
       :class="partners.length > visibleSlides ? 'justify-center' : ''"
       class="flex items-center sm:h-[14rem] gap-4 sm:gap-6 overflow-hidden transition-all duration-300 w-full"
     >
-      <div
+      <NuxtLink
         v-for="(partner, i) in partners"
         :key="i"
-        class="p-4 sm:p-6 text-center w-44 md:w-[18rem] flex-shrink-0 border"
+        :to="partner.linkPage"
+        target="_blank"
+        class="p-4 sm:p-6 text-center w-44 md:w-[18rem] flex-shrink-0 border hover:scale-105 transition-transform duration-300"
       >
         <img
           :src="partner.logo"
@@ -99,7 +103,7 @@ onUnmounted(() => {
         <p class="text-brown text-sm sm:text-base font-normal font-roboto">
           {{ partner.name }}
         </p>
-      </div>
+      </NuxtLink>
     </div>
   </div>
 </template>

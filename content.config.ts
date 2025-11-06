@@ -1,4 +1,5 @@
 import { defineCollection, defineContentConfig, z } from "@nuxt/content";
+import { link } from "fs";
 
 export default defineContentConfig({
     collections: {
@@ -19,10 +20,12 @@ export default defineContentConfig({
                     main: z.object({
                         name: z.string(),
                         logo: z.string(),
+                        linkPage: z.string(),
                     }),
                     others: z.array(z.object({
                         name: z.string(),
                         logo: z.string(),
+                        linkPage: z.string(),
                     })),
                 }),
             }),
