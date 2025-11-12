@@ -9,12 +9,12 @@ councils:
     phoneNumber:
 
   - name: 'Conselho Regional Centro'
-    email: 'crs@omvangola.co.ao'
-    address: 'Bairro Benfica, Rua 14 de Abril, nas instalações do Instituto de Serviços de Veterinária'
-    phoneNumber: '934 828 524'
+    email: 'conselhoregionalcentroomva@gmail.com'
+    address: 'Rua Norton de Matos, Instalações do Instituto dos Serviços de Veterinária'
+    phoneNumber: '932 754 790'
 
   - name: 'Conselho Regional Sul'
-    email: 'crc@omvangola.co.ao'
-    address: 'Rua da Administração Municipal do Huambo, nas instalações do Instituto de Serviços de Veterinária'
-    phoneNumber: '932 745 790'
+    email: 'conselhoregionalsulomva@gmail.com '
+    address: 'Rua Indira Gandi, instalações da Direção Provincial da Agricultura'
+    phoneNumber: '934 828 524'
 ---

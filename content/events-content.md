@@ -16,7 +16,7 @@ events:
     contactInfo:
       - 'WhatsApp: +244 932 131 935'
       - 'E-mail: geral@omvangola.co.ao'
-      - 'Local: Restaurante Forno – Luanda'
+      - 'Local: Restaurante O Forno – Luanda'
 
   - title: 'Workshop sobre Aquicultura em Angola'
     id: 'workshop-aquicultura-angola'
