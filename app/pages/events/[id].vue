@@ -30,6 +30,10 @@ const eventImageUrl = ref<string>('');
 if (eventOrErr.isRight()) {
   eventImageUrl.value = eventOrErr.value.href;
 }
+
+const normalizedWhatsapp = computed(() => {
+  return event.value?.contactInfo?.whatsapp?.replace(/\D/g, '') || '';
+});
 </script>
 
 <template>
@@ -55,9 +59,43 @@ if (eventOrErr.isRight()) {
           >
 
           <div class="space-y-1">
-            <TheParagraph v-for="(v, idx) in event.contactInfo" :key="idx">{{
-              v
-            }}</TheParagraph>
+            <TheParagraph v-if="event.contactInfo">
+              <p v-if="event.contactInfo.website">
+                Link:
+                <a
+                  class="text-primary/80 hover:text-primary"
+                  target="_blank"
+                  :href="event.contactInfo.website.url"
+                  >{{
+                    event.contactInfo.website.description ||
+                    event.contactInfo.website.url
+                  }}</a
+                >
+              </p>
+              <p v-if="event.contactInfo.whatsapp">
+                WhatsApp:
+                <a
+                  class="text-primary/80 hover:text-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  :href="`https://wa.me/${normalizedWhatsapp}`"
+                >
+                  {{ event.contactInfo.whatsapp }}
+                </a>
+              </p>
+              <p v-if="event.contactInfo.email">
+                Email:
+                <a
+                  class="text-primary/80 hover:text-primary"
+                  :href="`mailto:${event.contactInfo.email}`"
+                >
+                  {{ event.contactInfo.email }}
+                </a>
+              </p>
+              <p v-if="event.contactInfo.location">
+                Localização: {{ event.contactInfo.location }}
+              </p>
+            </TheParagraph>
           </div>
         </div>
       </div>

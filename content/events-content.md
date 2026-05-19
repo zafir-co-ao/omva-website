@@ -3,6 +3,21 @@ title: 'Eventos OMVA'
 description: 'Descubra os próximos eventos e atividades que a nossa organização está a planear.'
 
 events:
+  - title: '2.º Evento Angolano sobre Medicina Veterinária'
+    id: 'medicina-veterinaria'
+    date: 'Clube S — 20 e 21 de Junho de 2026'
+    image: 'event-medicina-veterinaria'
+    description: 'Vem aí o 2.º Evento Angolano de Medicina Veterinária, um encontro único que une conhecimento, partilha e paixão pelos animais.'
+    fullDescription:
+      - 'Nos dias 20 e 21 de Junho de 2026, o Clube S será o ponto de encontro de profissionais, estudantes e amantes dos animais, num evento dedicado à Ciência, Bem-Estar e Uma Só Saúde.'
+      - 'O programa conta com palestras científicas, um concurso de fotografia animal e um concurso de pósteres científicos, promovendo a troca de experiências e a valorização do sector em Angola.'
+      - 'O evento destaca ainda o PetStars, um concurso de talentos, obediência e beleza aberto à participação do público. Inscreva já o seu animal de estimação e junte ciência, bem-estar e estrelas de quatro patas no mesmo espaço.'
+    contactInfo:
+      website:
+        url: 'https://clube-s.ao/'
+        description: 'Realizar inscrição no site oficial'
+      location: 'Clube S'
+      
   - title: 'A Qualidade do Produto de Origem Animal Esperada no Consumidor (Restauração, Hotelaria e Supermercados)'
     id: 'qualidade-produto-origem-animal'
     date: 'Luanda — 05 de Dezembro de 2025'
@@ -14,9 +29,9 @@ events:
       - 'O evento incluirá momentos de debate, exposição de produtos, networking e almoço, proporcionando um ambiente dinâmico de interação entre o sector produtivo e o mercado consumidor.'
 
     contactInfo:
-      - 'WhatsApp: +244 932 131 935'
-      - 'E-mail: geral@omvangola.co.ao'
-      - 'Local: Restaurante O Forno – Luanda'
+      whatsapp: '+244 932 131 935'
+      email: 'geral@omvangola.co.ao'
+      location: 'Restaurante O Forno – Luanda'
 
   - title: 'Workshop sobre Aquicultura em Angola'
     id: 'workshop-aquicultura-angola'
