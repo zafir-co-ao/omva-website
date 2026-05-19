@@ -1,39 +1,58 @@
 # OMVA WebSite
 
-A OMVA WebSite é um projeto desenvolvido para a Ordem dos Médicos Veterinários de Angola (OMVA), com o objetivo de fornecer uma plataforma digital que represente e regule a profissão veterinária em Angola. Este site é uma ferramenta essencial para promover o progresso técnico e científico, salvaguardar os interesses profissionais dos membros da OMVA e contribuir ativamente para a saúde pública, sanidade animal e higiene alimentar sustentável.
+A plataforma digital da Ordem dos Médicos Veterinários de Angola (OMVA) é uma ferramenta essencial para a representação, regulação e promoção da profissão veterinária em Angola. Este projeto visa salvaguardar os interesses profissionais dos membros e contribuir para a saúde pública, sanidade animal e segurança alimentar.
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Framework:** [Nuxt 4](https://nuxt.com/) (Vue 3)
+- **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
+- **CMS:** [Antbox CMS](https://antbox.io) com Integração [Lightray](https://github.com/zafir-co-ao/lightray)
+- **Conteúdo:** [Nuxt Content](https://content.nuxt.com/)
+- **Email:** [Nodemailer](https://nodemailer.com/)
+- **Testes:** [Vitest](https://vitest.dev/)
+
+## 🔐 Área Administrativa
+
+O projeto inclui uma área reservada para gestão de conteúdos e administração, acessível através do caminho:
+
+- **URL:** `/-/a`
+
+Esta área utiliza a biblioteca `Lightray` para descoberta e gestão de documentos e metadados diretamente integrados com o Antbox CMS.
 
 ## 🚀 Instalação e Configuração
 
-### 1. Instalar dependências
+### 1. Clonar o Repositório
 
-No diretório do projeto, executar:
+```bash
+git clone git@github.com:zafir-co-ao/omva-website.git
+cd omva-website
+```
+
+### 2. Instalar Dependências
 
 ```bash
 npm install
 ```
 
-### 2. Configurar variáveis de ambiente
+### 3. Configurar Variáveis de Ambiente
 
-Criar um ficheiro `.env` na raiz do projeto com o seguinte conteúdo:
+Crie um ficheiro `.env` na raiz do projeto baseado no `.env.example`:
 
 ```plaintext
 # CMS Antbox
-ANTBOX_URL=
-ANTBOX_TENANT=
+ANTBOX_URL=https://seu-antbox.url
+ANTBOX_TENANT=seu-tenant
 
-# SMTP
-SMTP_HOST=mail.minhaempresa.com
+# SMTP (Envio de Formulários)
+SMTP_HOST=mail.provedor.com
 SMTP_PORT=465
-SMTP_USER=contato@minhaempresa.com
-SMTP_PASS=senha_super_secreta
+SMTP_USER=contato@omvangola.co.ao
+SMTP_PASS=sua_senha_secreta
 ```
-
-> ⚠️ **Nota:** Nunca exponha credenciais sensíveis em repositórios públicos.  
-> Utilize variáveis de ambiente seguras ou serviços de gestão de secrets em produção.
 
 ## 💻 Desenvolvimento
 
-Para iniciar o servidor de desenvolvimento:
+Para iniciar o servidor de desenvolvimento com hot-reload:
 
 ```bash
 npm run dev
@@ -41,49 +60,38 @@ npm run dev
 
 O site ficará disponível em: [http://localhost:3000](http://localhost:3000)
 
-## 📦 Publicação de Artefactos no CMS (Antbox)
+### Outros Comandos
 
-### Ambiente de Desenvolvimento
+- `npm run build`: Prepara a aplicação para produção.
+- `npm run preview`: Pré-visualiza o build de produção localmente.
+- `npm run test`: Executa os testes unitários com Vitest.
 
-```bash
-npm run antbox-script [antbox-url] [antbox-tenant]
-```
+## 📦 Gestão de Artefactos (Antbox)
 
-Se os parâmetros não forem fornecidos, os valores por omissão serão:
-
-- `ANTBOX_URL=http://localhost:7180`
-- `ANTBOX_TENANT=omva-website`
-
-### Produção
+Para publicar definições de aspectos e imagens no CMS:
 
 ```bash
-npm run antbox-script [antbox-url] [antbox-tenant]
+./.config/antbox-script.sh
 ```
 
-## 🌐 Produção
+Pode passar variáveis de ambiente para customizar a execução:
+`ANTBOX_URL="url" ANTBOX_TENANT="tenant" ROOT_PASSWORD="pass" ./.config/antbox-script.sh`
 
-### 1. Gerar build do projeto
+## 🌐 Produção e Deploy
 
-Criar uma tag
+O deploy é automatizado via **GitHub Actions** para a plataforma **Vercel**.
 
-```bash
-git tag v*.*.*
-```
+### Processo de Deploy
 
-> Ex.: git tag v1.0.0
+O deploy para produção é acionado pela criação de uma nova tag de versão:
 
-Depois, executar:
+1. Crie uma tag:
+   ```bash
+   git tag v1.0.0
+   ```
+2. Envie a tag para o repositório:
+   ```bash
+   git push origin v1.0.0
+   ```
 
-```bash
-git push origin v*.*.*
-```
-
-> Ex.: git push origin v1.0.0
-
-### 2. Pré-visualizar produção localmente
-
-```bash
-npm run preview
-```
-
-O site ficará disponível em: [http://localhost:4173](http://localhost:4173) _(por omissão do Vite)_
+O workflow no GitHub tratará de realizar o build e o deploy para a Vercel automaticamente.
