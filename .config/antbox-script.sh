@@ -1,24 +1,26 @@
 #!/usr/bin/bash
 
-set -euo pipefail
-
 ASPECTS_DIR=$(echo ".config/aspects/")
 BANNERS_IMAGES_DIR=$(echo ".config/images/banners/")
 EVENTS_IMAGES_DIR=$(echo ".config/images/events/")
 GOVERNING_BODY_IMAGES_DIR=$(echo ".config/images/governing-body/")
 
-SERVER="${1:-http://localhost:7180}"
-TENANT="${2:-omva-website}"
-PASSWORD="demo"
 
-# Verifica se a palavra passe foi fornecida
-if [ -z "${PASSWORD:-}" ]; then
-    echo "Erro: A variável de ambiente [PASSWORD] não foi definida."
-    exit 1
+# Definir valores padrões
+if [ -z "${SERVER}" ]; then
+    SERVER="http://localhost:7180"
+fi
+
+if [ -z "${TENANT}" ]; then
+    TENANT="omva-website"
+fi
+
+if [ -z "${ROOT_PASSWORD}" ]; then
+    ROOT_PASSWORD="demo"
 fi
 
 # Gerar o hash SHA-256 da senha
-SECRET=$(echo -n "$PASSWORD" | sha256sum | awk '{print $1}')
+SECRET=$(echo -n "$ROOT_PASSWORD" | sha256sum | awk '{print $1}')
 
 echo "Autenticando..."
 
@@ -69,7 +71,7 @@ for aspect_file in "$ASPECTS_DIR"*.json; do
                 --header "X-Access-Token: $JWT" \
                 --data "$ASPECT_DATA"
         )
-        
+
         ASPECT_UUID=$(echo "$RESPONSE" | awk -F'"' '{print $4}')
 
         if [ -n "$ASPECT_UUID" ]; then
@@ -182,7 +184,7 @@ for image in $EVENTS_IMAGES_DIR*; do
                 \"aspects\": [\"event-uuid\"]
             };type=application/json"
         )
-        
+
         EVENT_UUID=$(echo "$RESPONSE" | awk -F'"' '{print $4}')
 
         if [ -n "$EVENT_UUID" ]; then
@@ -237,7 +239,7 @@ for image in $GOVERNING_BODY_IMAGES_DIR*; do
                 \"aspects\": [\"member-uuid\"]
             };type=application/json"
         )
-        
+
         MEMBER_UUID=$(echo "$RESPONSE" | awk -F'"' '{print $4}')
 
         if [ -n "$MEMBER_UUID" ]; then
