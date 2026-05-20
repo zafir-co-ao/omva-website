@@ -34,4 +34,5 @@ jobs:
         run: npm run build
 
       - name: Deploy to Vercel
+        timeout-minutes: 10
         run: vercel --prod --token=$VERCEL_TOKEN
