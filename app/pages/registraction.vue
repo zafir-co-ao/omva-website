@@ -1,26 +1,22 @@
 <script setup lang="ts">
 import { NuxtLink } from '#components';
 
-const { data } = await useAsyncData('registraction', () =>
-  queryCollection('content').path('/registraction-content').first()
-);
-
-useSeoMeta({
-  title: data.value?.title,
-  description: data.value?.description,
-});
-
-const bannerService = useBannerService();
-const bannerOrErr = await bannerService.getRegistractionBanner();
-
-if (bannerOrErr.isLeft()) {
-  console.error(bannerOrErr.value);
-}
-
 const bannerImageUrl = ref<string>('');
+const bannerService = useBannerService();
+
+const [bannerOrErr, pageContent] = await Promise.all([
+  bannerService.getRegistractionBanner(),
+  queryCollection('content').path('/registraction-content').first(),
+]);
+
 if (bannerOrErr.isRight()) {
   bannerImageUrl.value = bannerOrErr.value.href;
 }
+
+useSeoMeta({
+  title: pageContent?.title,
+  description: pageContent?.description,
+});
 </script>
 
 <template>
@@ -79,7 +75,11 @@ if (bannerOrErr.isRight()) {
 
       <!-- Texto + Tabela -->
       <div class="col-span-1 lg:col-span-2">
-        <ContentRenderer class="grid gap-10" v-if="data" :value="data" />
+        <ContentRenderer
+          class="grid gap-10"
+          v-if="pageContent"
+          :value="pageContent"
+        />
       </div>
     </div>
   </div>

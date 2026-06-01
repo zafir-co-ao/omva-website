@@ -2,15 +2,23 @@
 import { ref } from 'vue';
 import BannerImage from '~/components/BannerImage.vue';
 
+const bannerService = useBannerService();
+const bannerImageUrl = ref<string>('');
+const openCouncils = ref<Set<number>>(new Set());
+
 const { data } = await useAsyncData('regional-councils', () =>
   queryCollection('regionalCouncils').path('/regional-councils-content').first()
 );
 
+const bannerOrErr = await bannerService.getRegionalCouncilsBanner();
+
+if (bannerOrErr.isRight()) {
+  bannerImageUrl.value = bannerOrErr.value.href;
+}
+
 const regionalCouncils = computed(() => {
   return data.value?.councils || [];
 });
-
-const openCouncils = ref<Set<number>>(new Set());
 
 const toggleCouncil = (index: number) => {
   if (openCouncils.value.has(index)) {
@@ -26,18 +34,6 @@ useSeoMeta({
   description: data.value?.description,
   ogDescription: data.value?.description,
 });
-
-const bannerService = useBannerService();
-const bannerOrErr = await bannerService.getRegionalCouncilsBanner();
-
-if (bannerOrErr.isLeft()) {
-  console.error(bannerOrErr.value);
-}
-
-const bannerImageUrl = ref<string>('');
-if (bannerOrErr.isRight()) {
-  bannerImageUrl.value = bannerOrErr.value.href;
-}
 </script>
 
 <template>

@@ -16,9 +16,9 @@ useSeoMeta({
 <template>
   <div class="max-w-8xl mx-auto py-12 md:py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mx-auto">
-      <TheH1>Próximos Eventos</TheH1>
+      <TheH1>Nossos Eventos</TheH1>
     </div>
-    <div class="grid gap-16" v-if="data">
+    <div class="grid gap-16" v-if="data?.events">
       <div
         class="bg-light grid grid-cols-1 group lg:grid-cols-3"
         v-for="(event, index) in data.events"

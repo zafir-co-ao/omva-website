@@ -2,6 +2,8 @@
 import TheParagraph from '~/components/TheParagraph.vue';
 
 const route = useRoute();
+const eventImageUrl = ref<string>('');
+const eventsService = useEventsService();
 
 const { data } = await useAsyncData('event', () =>
   queryCollection('events').path('/events-content').first()
@@ -20,13 +22,11 @@ useSeoMeta({
     event.value?.description || 'Descrição do evento não disponível.',
 });
 
-const eventsService = useEventsService();
 const eventOrErr = await eventsService.getEventURL(event.value?.image!);
 if (eventOrErr.isLeft()) {
   console.error(eventOrErr.value);
 }
 
-const eventImageUrl = ref<string>('');
 if (eventOrErr.isRight()) {
   eventImageUrl.value = eventOrErr.value.href;
 }

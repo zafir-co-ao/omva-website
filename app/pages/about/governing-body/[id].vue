@@ -1,10 +1,13 @@
 <script setup lang="ts">
+const route = useRoute();
+const governingBodyImageUrl = ref<string>('');
+const memberId = route.params.id as string;
+
+const governingBodyService = useGoverningBodyService();
+
 const { data } = await useAsyncData('governing-body', () =>
   queryCollection('governingBody').path('/governing-body-content').first()
 );
-
-const route = useRoute();
-const memberId = route.params.id as string;
 
 const getMember = (id: string) => {
   return data.value?.members.find((member) => member.id === id);
@@ -12,25 +15,20 @@ const getMember = (id: string) => {
 
 const member = getMember(memberId);
 
+const governingBodyOrErr = await governingBodyService.getGoverningBodyURL(
+  member?.image!
+);
+
+if (governingBodyOrErr.isRight()) {
+  governingBodyImageUrl.value = governingBodyOrErr.value.href;
+}
+
 useSeoMeta({
   title: member?.name,
   description: member?.description,
   ogTitle: member?.name,
   ogDescription: member?.description,
 });
-
-const governingBodyService = useGoverningBodyService();
-const governingBodyOrErr = await governingBodyService.getGoverningBodyURL(
-  member?.image!
-);
-
-if (governingBodyOrErr.isLeft()) {
-  console.error(governingBodyOrErr.value);
-}
-const governingBodyImageUrl = ref<string>('');
-if (governingBodyOrErr.isRight()) {
-  governingBodyImageUrl.value = governingBodyOrErr.value.href;
-}
 </script>
 
 <template>

@@ -1,38 +1,30 @@
 <script setup lang="ts">
 import { NuxtImg } from '#components';
 import EventImage from '~/components/EventImage.vue';
-import Slide from '~/components/Slide.vue';
 
-const { data } = await useAsyncData('home', () => {
-  return queryCollection('home').path('/home-content').first();
-});
+const bannersService = useBannerService();
+const bannerImageUrl = ref<string>('');
 
-const eventsContent = await queryCollection('events')
-  .path('/events-content')
-  .first();
+const [bannerOrErr, homeContent, eventsContent] = await Promise.all([
+  bannersService.getHomeBanner(),
+  queryCollection('home').path('/home-content').first(),
+  queryCollection('events').path('/events-content').first(),
+]);
 
 const event = computed(() => {
   return eventsContent?.events[0] || null;
 });
 
-useSeoMeta({
-  title: data.value?.title,
-  description: data.value?.description,
-  ogTitle: data.value?.title,
-  ogDescription: data.value?.description,
-});
-
-const bannersService = useBannerService();
-const bannerOrErr = await bannersService.getHomeBanner();
-
-if (bannerOrErr.isLeft()) {
-  console.error(bannerOrErr.value);
-}
-
-const bannerImageUrl = ref<string>('');
 if (bannerOrErr.isRight()) {
   bannerImageUrl.value = bannerOrErr.value.href;
 }
+
+useSeoMeta({
+  title: homeContent?.title,
+  description: homeContent?.description,
+  ogTitle: homeContent?.title,
+  ogDescription: homeContent?.description,
+});
 </script>
 
 <template>
@@ -112,7 +104,7 @@ if (bannerOrErr.isRight()) {
       </div>
 
       <!-- Partners Section -->
-      <div v-if="data?.partners" class="mt-20 px-4">
+      <div v-if="homeContent?.partners" class="mt-20 px-4">
         <div class="border-b-[3px] w-fit mb-4 mx-auto lg:mx-0">
           <h2
             class="mb-4 text-brown text-2xl sm:text-3xl font-benton font-medium text-left"
@@ -122,11 +114,11 @@ if (bannerOrErr.isRight()) {
         </div>
 
         <div
-          v-if="data.partners.others"
+          v-if="homeContent.partners.others"
           class="mt-12 grid sm:grid-cols-2 xl:grid-cols-4 items-center gap-4 sm:gap-6 transition-all duration-300 w-full"
         >
           <NuxtLink
-            v-for="(partner, i) in data.partners.others"
+            v-for="(partner, i) in homeContent.partners.others"
             :key="i"
             :to="partner.linkPage"
             target="_blank"
