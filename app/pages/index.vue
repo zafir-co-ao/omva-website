@@ -73,7 +73,7 @@ useSeoMeta({
               <TheButton
                 className="bg-primary border-none hover:bg-primaryDense text-white py-3 px-8 text-base"
               >
-                <NuxtLink to="/registraction">Fazer Inscrição</NuxtLink>
+                <NuxtLink to="/registraction">Inscrever-se na Ordem</NuxtLink>
               </TheButton>
             </div>
           </div>
@@ -98,9 +98,7 @@ useSeoMeta({
             </TheParagraph>
             <div class="pt-4">
               <TheButton className="py-3 px-10">
-                <NuxtLink to="/about" class="font-semibold"
-                  >Saber Mais</NuxtLink
-                >
+                <NuxtLink to="/about">Saber Mais</NuxtLink>
               </TheButton>
             </div>
           </div>
@@ -301,7 +299,7 @@ useSeoMeta({
               </p>
               <NuxtLink
                 :to="`/events/${event.id}`"
-                class="text-primary font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:underline"
+                class="text-primary font-semibold text-sm uppercase tracking-wider flex items-center gap-2 hover:underline"
               >
                 Saber Mais
                 <svg
