@@ -12,13 +12,6 @@ export default defineContentConfig({
       type: 'page',
       source: '**/*.md',
       schema: z.object({
-        articles: z.array(
-          z.object({
-            title: z.string(),
-            description: z.string(),
-            link: z.string(),
-          })
-        ),
         partners: z.object({
           main: z.object({
             name: z.string(),
