@@ -86,6 +86,7 @@ export default defineContentConfig({
               .optional(),
             date: z.string(),
             image: z.string(),
+            gallery: z.array(z.string()).optional(),
           })
         ),
       }),

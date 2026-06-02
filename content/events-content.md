@@ -17,6 +17,25 @@ events:
         url: 'https://clube-s.ao/'
         description: 'Realizar inscrição no site oficial'
       location: 'Clube S'
+
+  - title: 'OMVA Participa No 11.º Evento de Formação dos Médicos Veterinários de Portugal'
+    id: 'formacao-medicos-veterinarios'
+    date: '22 a 24 de Maio de 2026'
+    image: 'event-formacao-medicos-veterinarios-1'
+    gallery:
+      - 'event-formacao-medicos-veterinarios-1'
+      - 'event-formacao-medicos-veterinarios-2'
+      - 'event-formacao-medicos-veterinarios-3'
+      - 'event-formacao-medicos-veterinarios-4'
+      - 'event-formacao-medicos-veterinarios-5'
+    description: 'A Ordem dos Médicos Veterinários de Angola (OMVA) participou no 11.º Evento de Formação dos Médicos Veterinários de Portugal, um encontro técnico-científico que reuniu profissionais e especialistas para discutir os principais desafios e oportunidades da Medicina Veterinária.'
+    fullDescription:
+      - 'A Ordem dos Médicos Veterinários de Angola (OMVA) participou no 11.º Evento de Formação dos Médicos Veterinários de Portugal, um importante encontro técnico-científico que reuniu profissionais, especialistas e representantes institucionais da Medicina Veterinária para debater os principais desafios e oportunidades da profissão.'
+      - 'A OMVA esteve representada pela sua Bastonária, Dra. Carla Fernandes, que, durante a sua intervenção, destacou a importância do fortalecimento da cooperação entre os países lusófonos, da formação contínua dos Médicos Veterinários e da valorização do papel estratégico da Medicina Veterinária no desenvolvimento sustentável das nações.'
+      - 'Na sua comunicação, a Bastonária apresentou o trabalho desenvolvido pela Ordem dos Médicos Veterinários de Angola no âmbito da regulação da profissão, da promoção da ética e deontologia profissional, da valorização científica dos Médicos Veterinários e do reforço da contribuição da classe para a Saúde Animal, Saúde Pública, Segurança Alimentar e Protecção Ambiental.'
+      - 'Foi igualmente realçada a necessidade de uma maior cooperação institucional e científica entre as Ordens profissionais, universidades, centros de investigação e serviços veterinários, tendo em consideração os desafios globais relacionados com as zoonoses, resistência antimicrobiana, alterações climáticas, segurança alimentar e implementação do conceito “Uma Só Saúde”.'
+      - 'A participação da OMVA neste evento constituiu uma importante oportunidade para a troca de experiências, partilha de conhecimentos e reforço das relações institucionais entre Angola e Portugal, contribuindo para o desenvolvimento da Medicina Veterinária e para a capacitação contínua dos profissionais.'
+      - 'A Ordem dos Médicos Veterinários de Angola agradece à Ordem dos Médicos Veterinários de Portugal pelo convite, pela excelente organização do evento e pela calorosa recepção, reafirmando a sua total disponibilidade para o fortalecimento da cooperação técnica, científica e institucional entre as duas organizações.'
       
   - title: 'A Qualidade do Produto de Origem Animal Esperada no Consumidor (Restauração, Hotelaria e Supermercados)'
     id: 'qualidade-produto-origem-animal'

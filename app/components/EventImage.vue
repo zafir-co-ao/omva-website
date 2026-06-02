@@ -20,6 +20,6 @@ const { data: eventImageUrl } = await useAsyncData(
     :key="id"
     :src="eventImageUrl"
     :alt="title"
-    class="h-full w-full transform transition-transform duration-500 md:hover:scale-110 md:group-hover:scale-110"
+    class="h-full w-full transform object-cover transition-transform duration-500 md:hover:scale-110 md:group-hover:scale-110"
   />
 </template>

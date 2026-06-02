@@ -2,16 +2,44 @@
 import TheParagraph from '~/components/TheParagraph.vue';
 
 const route = useRoute();
-const eventImageUrl = ref<string>('');
 const eventsService = useEventsService();
 
-const { data } = await useAsyncData('event', () =>
-  queryCollection('events').path('/events-content').first()
+const { data: event } = await useAsyncData(
+  `event-${route.params.id}`,
+  async () => {
+    const content = await queryCollection('events')
+      .path('/events-content')
+      .first();
+    return content?.events.find((e) => e.id === route.params.id);
+  }
 );
 
-const event = computed(() => {
-  return data.value?.events.find((event) => event.id === route.params.id);
-});
+const { data: imageUrls } = await useAsyncData(
+  `event-images-${route.params.id}`,
+  async () => {
+    if (!event.value) return null;
+
+    const mainUrlPromise = eventsService.getEventURL(event.value.image);
+    const galleryPromises = (event.value.gallery || []).map((img) =>
+      eventsService.getEventURL(img)
+    );
+
+    const [mainRes, ...galleryRes] = await Promise.all([
+      mainUrlPromise,
+      ...galleryPromises,
+    ]);
+
+    return {
+      main: mainRes.isRight() ? mainRes.value.href : '',
+      gallery: galleryRes
+        .filter((res) => res.isRight())
+        .map((res) => res.value.href),
+    };
+  }
+);
+
+const currentImageUrl = ref(imageUrls.value?.main || '');
+const galleryUrls = computed(() => imageUrls.value?.gallery || []);
 
 useSeoMeta({
   title: event.value?.title || 'Evento Desconhecido',
@@ -22,14 +50,9 @@ useSeoMeta({
     event.value?.description || 'Descrição do evento não disponível.',
 });
 
-const eventOrErr = await eventsService.getEventURL(event.value?.image!);
-if (eventOrErr.isLeft()) {
-  console.error(eventOrErr.value);
-}
-
-if (eventOrErr.isRight()) {
-  eventImageUrl.value = eventOrErr.value.href;
-}
+const selectImage = (url: string) => {
+  currentImageUrl.value = url;
+};
 
 const normalizedWhatsapp = computed(() => {
   return event.value?.contactInfo?.whatsapp?.replace(/\D/g, '') || '';
@@ -49,11 +72,28 @@ const normalizedWhatsapp = computed(() => {
       </div>
     </div>
     <div class="max-w-8xl mx-auto py-12 md:pb-20 md:pt-10 px-4 sm:px-6 lg:px-8">
-      <div class="mt-5 grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <div class="lg:col-span-1">
-          <NuxtImg :src="eventImageUrl" :alt="event.title" />
+      <div class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <div class="relative overflow-hidden h-auto w-full">
+            <transition name="fade" mode="out-in">
+              <NuxtImg
+                :key="currentImageUrl"
+                :src="currentImageUrl"
+                :alt="event.title"
+                class="w-full h-full max-h-[660px] object-cover"
+              />
+            </transition>
+          </div>
+          <div class="mt-8 lg:mt-12">
+            <EventGallery
+              v-if="galleryUrls.length > 1"
+              :images="galleryUrls"
+              :current-image="currentImageUrl"
+              @select="selectImage"
+            />
+          </div>
         </div>
-        <div class="lg:col-span-2 space-y-4 max-w-2xl">
+        <div class="space-y-4 max-w-2xl">
           <TheParagraph v-for="(p, idx) in event.fullDescription" :key="idx">
             {{ p }}</TheParagraph
           >
@@ -105,3 +145,15 @@ const normalizedWhatsapp = computed(() => {
     <p class="text-center text-gray-500">Evento não encontrado.</p>
   </div>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
