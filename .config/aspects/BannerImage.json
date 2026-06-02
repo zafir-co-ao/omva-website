@@ -6,7 +6,7 @@
   "parent": "--aspects--",
   "aspectProperties": [
     {
-      "title": "Exibir na página",
+      "title": "Coloque a referência da página",
       "name": "page",
       "type": "string",
       "required": true,
@@ -16,7 +16,8 @@
         "general-assembly",
         "registraction-hero",
         "regional-councils",
-        "history"
+        "history",
+        "home-professional-cedula"
       ]
     }
   ],
