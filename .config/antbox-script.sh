@@ -35,7 +35,7 @@ RESPONSE=$(curl -s --fail --location "$SERVER/login/root" \
 # Extrair o JWT do JSON usando jq
 JWT=$(echo "$RESPONSE" | awk -F'"' '/jwt/ {print $4}')
 
-if [ -z "$JWT" ] || [ "$JWT" == "null" ]; then
+if [ -z "$JWT" ]; then
     echo "Erro: Token JWT não encontrado na resposta."
     exit 1
 fi
