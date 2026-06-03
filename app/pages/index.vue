@@ -28,6 +28,10 @@ if (professionalCedulaBanner.isRight()) {
   professionalCedulaBannerImageUrl.value = professionalCedulaBanner.value.href;
 }
 
+const getEventsRecents = () => {
+  return eventsContent?.events?.slice(0, 3);
+};
+
 useSeoMeta({
   title: homeContent?.title,
   description: homeContent?.description,
@@ -236,7 +240,7 @@ useSeoMeta({
             <h2
               class="text-3xl md:text-4xl font-benton font-medium text-brown mb-4"
             >
-              Próximos Eventos
+              Nossos Eventos
             </h2>
             <p class="text-gray-600 font-roboto">
               Participe dos nossos workshops, conferências e formações para o
@@ -250,7 +254,7 @@ useSeoMeta({
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <article
-            v-for="event in eventsContent?.events.slice(0, 3)"
+            v-for="event in getEventsRecents()"
             :key="event.id"
             class="group bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
           >

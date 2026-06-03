@@ -51,7 +51,7 @@ useSeoMeta({
                 >
                   <EventImage
                     :image="event.image"
-                    :key="event.id"
+                    :id="event.id"
                     :title="event.title"
                   ></EventImage>
                 </div>
