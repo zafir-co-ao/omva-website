@@ -22,7 +22,7 @@ useSeoMeta({
     <div v-if="data?.events">
       <ThePagination
         :items="data.events"
-        :pageSize="5"
+        :pageSize="10"
         v-slot="{ paginatedItems }"
       >
         <div class="grid gap-16" v-if="paginatedItems.length > 0">
