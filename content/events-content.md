@@ -3,6 +3,105 @@ title: 'Eventos OMVA'
 description: 'Descubra os próximos eventos e atividades que a nossa organização está a planear.'
 
 events:
+  - title: 'VI Congresso Angolano de Medicina Veterinária'
+    id: 'vi-congresso-angolano-de-medicina-veterinaria'
+    date: 'Online — 11 a 13 de Novembro de 2026'
+    image: 'event-iv-congresso-angolano-de-medicina-veterinaria-1'
+    gallery:
+      - 'event-iv-congresso-angolano-de-medicina-veterinaria-1'
+      - 'event-iv-congresso-angolano-de-medicina-veterinaria-2'
+      - 'event-iv-congresso-angolano-de-medicina-veterinaria-3'
+    description: 'A Ordem dos Médicos Veterinários de Angola realiza o VI Congresso Angolano de Medicina Veterinária sob o tema "Inovação, Saúde Animal e Uma Só Saúde".'
+    fullDescription:
+      - 'Considerado o maior encontro da Medicina Veterinária em Angola, o VI Congresso será realizado em formato 100% online através da plataforma Even3, promovendo a partilha de conhecimento e a construção de soluções para a Saúde Animal e a abordagem "Uma Só Saúde".'
+      - 'O evento é destinado a médicos veterinários, estudantes e demais profissionais interessados, convidando também os especialistas a submeterem as suas propostas de palestras na plataforma Even3 (no evento "VI Congresso Angolano MV OMVA").'
+      - 'As datas importantes para a submissão de palestras são: prazo limite para submissão até 1 de Outubro de 2026 e comunicação de aceitação até 8 de Outubro de 2026.'
+    contactInfo:
+      whatsapp: ''
+      email: ''
+      location: 'Plataforma Even3 (100% Online)'
+      
+  - title: 'OMVA TOUR — Kussonga Jordão'
+    id: 'omva-tour-kussonga-jordao'
+    date: 'Camabatela e Negage — 19 a 23 de Outubro de 2026'
+    image: 'event-omva-tour-kussonga-jordao'
+    description: 'A Ordem dos Médicos Veterinários de Angola apresenta o OMVA TOUR "Kussonga Jordão", um evento de aproximação, valorização e escuta activa dos médicos veterinários.'
+    fullDescription:
+      - 'Sob o lema "Aproximar • Partilhar • Valorizar — Unidos pela valorização da Medicina Veterinária em Angola", esta edição percorrerá comunidades para promover o diálogo e fortalecer a cadeia de valor da produção animal.'
+      - 'As etapas da Edição 2026 incluirão passagens pelo Cuanza Norte (Camabatela) e Uíge (Negage).'
+      - 'O projecto visa reforçar o contacto directo com médicos veterinários, produtores, estudantes e demais intervenientes do sector, promovendo parcerias, a saúde animal e a produção sustentável.'
+    contactInfo:
+      whatsapp: '+244 932 131 935'
+      email: 'geral@omvangola.co.ao'
+      location: 'Cuanza Norte (Camabatela) e Uíge (Negage)'
+        
+  - title: 'Workshop sobre Avicultura'
+    id: 'workshop-sobre-avicultura'
+    date: 'Huambo — 25 de Setembro de 2026'
+    image: 'event-workshop-sobre-avicultura'
+    description: 'A Ordem dos Médicos Veterinários de Angola promove o Workshop sobre Avicultura com o tema "A Importância Estratégica da Avicultura no Desenvolvimento Económico e Segurança Alimentar em Angola".'
+    fullDescription:
+      - 'O evento abordará a importância estratégica do sector avícola para o desenvolvimento económico e a garantia da segurança alimentar em Angola.'
+      - 'A iniciativa reunirá profissionais, parceiros institucionais e especialistas para debater desafios e oportunidades na avicultura nacional.'
+      - 'O workshop decorrerá das 8h às 17h no Jardim Botânico do Huambo.'
+    contactInfo:
+      whatsapp: '+244 932 131 935'
+      email: 'geral@omvangola.co.ao'
+      location: 'Jardim Botânico, Huambo'
+        
+  - title: 'Pré-Cursos sobre Avicultura'
+    id: 'pre-cursos-sobre-avicultura'
+    date: 'Huambo — 22 a 24 de Setembro de 2026'
+    image: 'event-pre-cursos-sobre-avicultura'
+    description: 'A Ordem dos Médicos Veterinários de Angola promove um conjunto de Pré-Cursos sobre Avicultura, visando fortalecer as capacidades técnicas e empresariais do sector.'
+    fullDescription:
+      - 'Esta iniciativa visa fortalecer as capacidades técnicas, científicas, institucionais e empresariais dos actores da cadeia de valor avícola em Angola, promovendo boas práticas de produção, biossegurança, sanidade animal, segurança alimentar, empreendedorismo e sustentabilidade da avicultura nacional.'
+      - 'A programação abordará o Maneio básico sobre avicultura de corte (Dr. José Manuel Moras Cordeiro), Maneio básico sobre galinhas poedeiras (Dra. Africa Olimpia de Jesus Félix) e Gestão de explorações avícolas (Eng.º José Garcia Vital).'
+      - 'Os pré-cursos decorrerão de 22 a 24 de Setembro de 2026, das 8h às 17h, nas instalações do CINFOTEC no Huambo.'
+    contactInfo:
+      whatsapp: '+244 932 131 935'
+      email: 'geral@omvangola.co.ao'
+      location: 'CINFOTEC, Huambo'
+        
+  - title: 'Formação Prática: Castração de Felinos'
+    id: 'formacao-pratica-castracao-de-felinos'
+    date: 'Huambo — 21 de Agosto de 2026'
+    image: 'event-formacao-pratica-castracao-de-felinos-1'
+    gallery:
+      - 'event-formacao-pratica-castracao-de-felinos-1'
+      - 'event-formacao-pratica-castracao-de-felinos-2'
+      - 'event-formacao-pratica-castracao-de-felinos-3'
+      - 'event-formacao-pratica-castracao-de-felinos-4'
+    description: 'A Ordem dos Médicos Veterinários de Angola apresenta a formação prática de "Castração de Felinos", orientada pelo Dr. José Sachilepa.'
+    fullDescription:
+      - 'Garanta a sua inscrição e participe nesta formação, reforçando os seus conhecimentos teóricos e práticos em cirurgia de pequenos animais.'
+      - 'A formação abordará benefícios essenciais da castração, como a saúde e prevenção de doenças, além da melhoria comportamental dos felinos.'
+      - 'O investimento para participação é de 1 000 Kz para estudantes e 5 000 Kz para médicos veterinários.'
+    contactInfo:
+      whatsapp: '+244 932 745 790'
+      email: 'geral@omvangola.co.ao'
+      location: 'Faculdade de Medicina Veterinária, Huambo'
+
+  - title: 'Audiência Institucional com o Primeiro Vice-Presidente da Assembleia Nacional'
+    id: 'audiencia-primeiro-vice-presidente-assembleia-nacional'
+    date: 'Luanda — 20 de Agosto de 2026'
+    image: 'event-audiencia-assembleia-nacional-1'
+    gallery:
+      - 'event-audiencia-assembleia-nacional-1'
+      - 'event-audiencia-assembleia-nacional-2'
+      - 'event-audiencia-assembleia-nacional-3'
+      - 'event-audiencia-assembleia-nacional-4'
+      - 'event-audiencia-assembleia-nacional-5'
+    description: 'A OMVA realizou uma audiência institucional com Sua Excelência Dr. Américo António Cuononoca, Primeiro Vice-Presidente da Assembleia Nacional.'
+    fullDescription:
+      - 'A audiência institucional teve como objectivo principal a apresentação e abordagem de assuntos de interesse estratégico para a Medicina Veterinária, a saúde animal e a saúde pública em Angola.'
+      - 'O encontro visou reforçar o diálogo institucional e o fortalecimento do papel da Ordem dos Médicos Veterinários de Angola (OMVA) no desenvolvimento do sector e na protecção da saúde pública.'
+      - 'O evento decorreu no Gabinete do Primeiro Vice-Presidente da Assembleia Nacional, às 10h30.'
+    contactInfo:
+      whatsapp: ''
+      email: ''
+      location: ''
+        
   - title: '2.º Evento Angolano sobre Medicina Veterinária'
     id: 'medicina-veterinaria'
     date: 'Clube S — 20 e 21 de Junho de 2026'
@@ -61,7 +160,6 @@ events:
       - 'Este evento tem como objectivo fortalecer a ligação entre produtores, médicos veterinários, consumidores, restaurantes e unidades hoteleiras, promovendo a segurança alimentar, a qualidade dos produtos de origem animal e a valorização da produção nacional.'
       - 'A iniciativa reunirá profissionais do sector agropecuário, da restauração, hotelaria e distribuição, num espaço de partilha de experiências, troca de conhecimentos e criação de parcerias estratégicas que contribuam para o desenvolvimento sustentável da cadeia produtiva e de consumo responsável.'
       - 'O evento incluirá momentos de debate, exposição de produtos, networking e almoço, proporcionando um ambiente dinâmico de interação entre o sector produtivo e o mercado consumidor.'
-
     contactInfo:
       whatsapp: '+244 932 131 935'
       email: 'geral@omvangola.co.ao'
